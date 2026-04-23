@@ -1,6 +1,8 @@
 import { UploadForm } from "@/components/upload-form";
+import { AppLayout } from "@/components/layouts/app-layout";
+import type { NextPageWithLayout } from "@/lib/page-types";
 
-export default function UploadPage() {
+const UploadPage: NextPageWithLayout = () => {
   return (
     <div className="space-y-6">
       <div>
@@ -12,4 +14,8 @@ export default function UploadPage() {
       <UploadForm />
     </div>
   );
-}
+};
+
+UploadPage.getLayout = (page) => <AppLayout>{page}</AppLayout>;
+
+export default UploadPage;

@@ -200,5 +200,5 @@ When extending the project, likely next moves in rough order:
 3. MTN SMS templates + fixtures (once real samples are available)
 4. Eval harness: frozen labeled set, before/after categorization accuracy,
    parser fallback rate report
-5. Deployment: Vercel for frontend, Railway/Render for backend, env vars for
-   API key
+5. Deployment: TBD for frontend (not Vercel), Railway/Render for backend, env
+   vars for API key and Clerk keys
