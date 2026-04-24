@@ -24,6 +24,7 @@ from sqlalchemy.orm import Session
 from app.config import get_settings
 from app.data.taxonomy import Category, CATEGORY_DESCRIPTIONS
 from app.models.db import CategoryExample
+from app.observability import anthropic_client, traceable
 from app.schemas.transaction import ParsedTransaction
 from app.services.embeddings import embed_one, embed, cosine_similarity
 
@@ -52,6 +53,7 @@ class FewShot:
     category: str
 
 
+@traceable(name="retrieve_few_shots", tags=["categorizer", "rag"], run_type="retriever")
 def retrieve_few_shots(
     db: Session, query_text: str, k: int = 5, min_similarity: float = 0.55
 ) -> list[FewShot]:
@@ -92,12 +94,13 @@ def _build_user_prompt(transaction_text: str, few_shots: list[FewShot]) -> str:
     return "\n".join(parts)
 
 
+@traceable(name="classify", tags=["categorizer"], run_type="chain")
 def classify(
     db: Session, transaction: ParsedTransaction, client: Anthropic | None = None
 ) -> tuple[Category, float]:
     """Zero-shot → few-shot categorization. Returns (category, confidence)."""
     settings = get_settings()
-    client = client or Anthropic(api_key=settings.anthropic_api_key)
+    client = client or anthropic_client(settings.anthropic_api_key)
 
     text = transaction_to_text(transaction)
     few_shots = retrieve_few_shots(db, text)

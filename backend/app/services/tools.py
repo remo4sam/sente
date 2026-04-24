@@ -15,6 +15,7 @@ from sqlalchemy import and_, func, desc
 from sqlalchemy.orm import Session
 
 from app.models.db import Transaction
+from app.observability import traceable
 
 
 def _date_range(period: str | None) -> tuple[datetime | None, datetime | None]:
@@ -46,6 +47,7 @@ def _date_range(period: str | None) -> tuple[datetime | None, datetime | None]:
     return None, None
 
 
+@traceable(name="tool.query_transactions", tags=["tool"], run_type="tool")
 def tool_query_transactions(
     db: Session,
     category: str | None = None,
@@ -87,6 +89,7 @@ def tool_query_transactions(
     }
 
 
+@traceable(name="tool.aggregate", tags=["tool"], run_type="tool")
 def tool_aggregate(
     db: Session,
     group_by: str,  # "category" | "counterparty" | "month"
@@ -131,6 +134,7 @@ def tool_aggregate(
     }
 
 
+@traceable(name="tool.top_counterparties", tags=["tool"], run_type="tool")
 def tool_top_counterparties(
     db: Session, direction: str = "out", period: str | None = None, limit: int = 10
 ) -> dict[str, Any]:
@@ -144,6 +148,7 @@ def tool_top_counterparties(
     )
 
 
+@traceable(name="tool.category_trend", tags=["tool"], run_type="tool")
 def tool_category_trend(
     db: Session, category: str, months: int = 6
 ) -> dict[str, Any]:

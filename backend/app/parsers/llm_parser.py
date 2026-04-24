@@ -21,6 +21,7 @@ from typing import Optional
 from anthropic import Anthropic
 
 from app.config import get_settings
+from app.observability import anthropic_client, traceable
 from app.schemas.transaction import (
     Direction,
     Network,
@@ -58,10 +59,11 @@ system notice), return {"type": "other", "direction": "out", "amount": 0, "times
 """
 
 
+@traceable(name="llm_parse", tags=["parser", "fallback"], run_type="chain")
 def llm_parse(message: str, client: Optional[Anthropic] = None) -> Optional[ParsedTransaction]:
     """Parse a message via Claude. Returns None on hard failure."""
     settings = get_settings()
-    client = client or Anthropic(api_key=settings.anthropic_api_key)
+    client = client or anthropic_client(settings.anthropic_api_key)
 
     try:
         resp = client.messages.create(

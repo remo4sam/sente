@@ -17,6 +17,7 @@ from anthropic import Anthropic
 from sqlalchemy.orm import Session
 
 from app.config import get_settings
+from app.observability import anthropic_client, traceable
 from app.services.tools import TOOL_REGISTRY
 
 logger = logging.getLogger(__name__)
@@ -106,10 +107,11 @@ Rules:
 """
 
 
+@traceable(name="run_chat", tags=["agent"], run_type="chain")
 def run_chat(db: Session, messages: list[dict[str, Any]], max_steps: int = 6) -> dict[str, Any]:
     """Run the agent loop. Returns {"answer": str, "trace": list}."""
     settings = get_settings()
-    client = Anthropic(api_key=settings.anthropic_api_key)
+    client = anthropic_client(settings.anthropic_api_key)
 
     trace: list[dict[str, Any]] = []
     convo = list(messages)
