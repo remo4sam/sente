@@ -81,6 +81,36 @@ def new_request_id() -> str:
 
 # ---------- LLM call metrics ----------
 
+# USD per 1M tokens. Source: Anthropic public pricing for the Claude 4.x line.
+# Keyed by model ID with bare-family fallbacks so dated snapshots
+# (e.g. "claude-haiku-4-5-20251001") and aliases ("claude-haiku-4-5") both resolve.
+MODEL_PRICING_USD_PER_MTOK: dict[str, dict[str, float]] = {
+    "claude-haiku-4-5":  {"input": 1.0,  "output": 5.0},
+    "claude-sonnet-4-6": {"input": 3.0,  "output": 15.0},
+    "claude-opus-4-7":   {"input": 15.0, "output": 75.0},
+}
+
+
+def _price_for(model: str) -> dict[str, float] | None:
+    if model in MODEL_PRICING_USD_PER_MTOK:
+        return MODEL_PRICING_USD_PER_MTOK[model]
+    # Strip a trailing "-YYYYMMDD" date snapshot if present
+    for family, price in MODEL_PRICING_USD_PER_MTOK.items():
+        if model.startswith(family):
+            return price
+    return None
+
+
+def estimate_cost_usd(model: str, input_tokens: int, output_tokens: int) -> float:
+    """Return the USD cost for a single call. 0.0 if model is unknown."""
+    price = _price_for(model)
+    if price is None:
+        return 0.0
+    return (input_tokens / 1_000_000) * price["input"] + (
+        output_tokens / 1_000_000
+    ) * price["output"]
+
+
 @dataclass
 class LlmCallSample:
     op: str                 # "parser" | "categorizer" | "chat" | other
@@ -93,6 +123,25 @@ class LlmCallSample:
 
 
 @dataclass
+class ModelStats:
+    """Per-model rollup within an op."""
+    model: str
+    calls: int = 0
+    input_tokens: int = 0
+    output_tokens: int = 0
+    cost_usd: float = 0.0
+
+    def as_dict(self) -> dict[str, Any]:
+        return {
+            "model": self.model,
+            "calls": self.calls,
+            "input_tokens": self.input_tokens,
+            "output_tokens": self.output_tokens,
+            "cost_usd": round(self.cost_usd, 6),
+        }
+
+
+@dataclass
 class LlmMetrics:
     """Per-operation rollup."""
     op: str
@@ -101,7 +150,9 @@ class LlmMetrics:
     failures: int = 0
     total_input_tokens: int = 0
     total_output_tokens: int = 0
+    total_cost_usd: float = 0.0
     latencies_ms: list[float] = field(default_factory=list)
+    by_model: dict[str, ModelStats] = field(default_factory=dict)
 
     @property
     def success_rate(self) -> float:
@@ -131,8 +182,10 @@ class LlmMetrics:
             "success_rate": round(self.success_rate, 4),
             "input_tokens": self.total_input_tokens,
             "output_tokens": self.total_output_tokens,
+            "cost_usd": round(self.total_cost_usd, 6),
             "p50_latency_ms": round(self.p50_latency_ms, 1),
             "p95_latency_ms": round(self.p95_latency_ms, 1),
+            "models": [self.by_model[m].as_dict() for m in sorted(self.by_model)],
         }
 
 
@@ -153,14 +206,23 @@ class LlmMetricsRecorder:
                 m.failures += 1
             m.total_input_tokens += sample.input_tokens
             m.total_output_tokens += sample.output_tokens
+            cost = estimate_cost_usd(sample.model, sample.input_tokens, sample.output_tokens)
+            m.total_cost_usd += cost
             m.latencies_ms.append(sample.latency_ms)
             # Cap latency history to last 1000 to keep memory bounded
             if len(m.latencies_ms) > 1000:
                 m.latencies_ms = m.latencies_ms[-1000:]
+            ms = m.by_model.setdefault(sample.model, ModelStats(model=sample.model))
+            ms.calls += 1
+            ms.input_tokens += sample.input_tokens
+            ms.output_tokens += sample.output_tokens
+            ms.cost_usd += cost
 
     def snapshot(self) -> dict[str, Any]:
         with self._lock:
-            return {op: m.as_dict() for op, m in self._by_op.items()}
+            ops = {op: m.as_dict() for op, m in self._by_op.items()}
+            total_cost = sum(m.total_cost_usd for m in self._by_op.values())
+            return {"ops": ops, "total_cost_usd": round(total_cost, 6)}
 
     def reset(self) -> None:
         with self._lock:

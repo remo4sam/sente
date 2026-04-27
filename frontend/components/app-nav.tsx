@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, MessageSquare, Receipt, Upload } from "lucide-react";
+import { Activity, BarChart3, MessageSquare, Receipt, Upload } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV = [
@@ -10,6 +10,7 @@ const NAV = [
   { href: "/upload", label: "Upload", icon: Upload },
   { href: "/transactions", label: "Transactions", icon: Receipt },
   { href: "/chat", label: "Chat", icon: MessageSquare },
+  { href: "/metrics", label: "Metrics", icon: Activity },
 ];
 
 export function AppNav() {

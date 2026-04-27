@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     parser_model: str = "claude-haiku-4-5-20251001"
     categorizer_model: str = "claude-haiku-4-5-20251001"
     chat_model: str = "claude-sonnet-4-6"
-    database_url: str = "sqlite:///./sente.db"
+    database_url: str = "postgresql+psycopg2://localhost:5432/sente"
     embedding_model: str = "sentence-transformers/bge-small-en-v1.5"
     cors_origins: str = "http://localhost:3000"
 

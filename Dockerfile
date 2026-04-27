@@ -19,7 +19,7 @@ RUN pip install --user --no-cache-dir -r requirements.txt
 ENV TRANSFORMERS_CACHE=/build/.cache/huggingface
 ENV HF_HOME=/build/.cache/huggingface
 RUN python -c "from sentence_transformers import SentenceTransformer; \
-    SentenceTransformer('sentence-transformers/bge-small-en-v1.5')"
+    SentenceTransformer('BAAI/bge-small-en-v1.5')"
 
 
 FROM python:3.12-slim AS runtime
@@ -50,5 +50,5 @@ USER app
 ENV PORT=8000
 EXPOSE 8000
 
-# 1 worker is correct for SQLite; bump for Postgres
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --workers 1"]
+# Postgres backend — safe to scale workers based on host CPU
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --workers 2"]

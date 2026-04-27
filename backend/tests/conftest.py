@@ -4,13 +4,22 @@ Mocks heavy / network-dependent imports so the suite runs offline:
   - sentence_transformers: returns deterministic small vectors so .tobytes()
     produces real bytes (needed by the integration tests that exercise
     the correction / few-shot store flow)
+
+Pins DATABASE_URL to in-memory SQLite before app modules are imported so the
+suite doesn't require a running Postgres (the app default is Postgres for dev).
 """
 from __future__ import annotations
 
+import os
 import sys
 from unittest.mock import MagicMock
 
 import numpy as np
+
+# File-backed (not :memory:) so multiple connections from the FastAPI thread
+# pool see the same data. The file is recreated per test by the fresh_db
+# fixture in test_integration.py.
+os.environ.setdefault("DATABASE_URL", "sqlite:///./test_sente.db")
 
 
 def _fake_encode(texts, **_kwargs):

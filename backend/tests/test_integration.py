@@ -76,7 +76,8 @@ def test_metrics_initial_state(client):
     assert r.status_code == 200
     assert "llm" in r.json()
     # No LLM calls yet
-    assert r.json()["llm"] == {}
+    assert r.json()["llm"]["ops"] == {}
+    assert r.json()["llm"]["total_cost_usd"] == 0
 
 
 def test_categories(client):
@@ -216,9 +217,13 @@ def test_metrics_populated_after_calls(client, mock_classifier_response):
         client.post("/ingest/text", json={"messages": sms})
 
     r = client.get("/metrics").json()
-    assert "categorizer" in r["llm"]
-    cat_metrics = r["llm"]["categorizer"]
+    assert "categorizer" in r["llm"]["ops"]
+    cat_metrics = r["llm"]["ops"]["categorizer"]
     assert cat_metrics["calls"] == 1
     assert cat_metrics["successes"] == 1
     assert cat_metrics["input_tokens"] > 0
     assert cat_metrics["p50_latency_ms"] >= 0
+    assert cat_metrics["cost_usd"] > 0
+    assert len(cat_metrics["models"]) == 1
+    assert cat_metrics["models"][0]["calls"] == 1
+    assert r["llm"]["total_cost_usd"] >= cat_metrics["cost_usd"]

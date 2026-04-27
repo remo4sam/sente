@@ -455,6 +455,10 @@ ENV/
 env.bak/
 venv.bak/
 
+# Local SQLite databases (Postgres is the configured backend)
+*.db
+*.db-journal
+
 # Spyder project settings
 .spyderproject
 .spyproject

@@ -27,12 +27,6 @@ services:
       - key: CORS_ORIGINS
         sync: false   # e.g. https://sente.vercel.app
       - key: DATABASE_URL
-        fromDatabase:
-          name: sente-db
-          property: connectionString
-
-databases:
-  - name: sente-db
-    plan: starter   # $7/mo. Free tier expires after 90 days.
-    databaseName: sente
-    user: sente
+        sync: false   # Supabase pooled connection string, set in dashboard.
+                      # Project Settings -> Database -> Connection Pooling,
+                      # Transaction mode (port 6543), append ?sslmode=require.
