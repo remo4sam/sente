@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider } from "@/components/clerk-provider";
 import { Fraunces, Geist, JetBrains_Mono } from "next/font/google";
 import { AppNav } from "@/components/app-nav";
+import { RouteGuard } from "@/components/route-guard";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider dynamic>
+    <ClerkProvider>
       <html
         lang="en"
         className={`${fraunces.variable} ${geist.variable} ${jetbrains.variable}`}
@@ -40,7 +41,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="flex min-h-screen">
             <AppNav />
             <main className="flex-1 overflow-x-hidden">
-              <div className="mx-auto max-w-6xl px-8 py-10">{children}</div>
+              <RouteGuard>
+                <div className="mx-auto max-w-6xl px-8 py-10">{children}</div>
+              </RouteGuard>
             </main>
           </div>
         </body>

@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@clerk/clerk-react";
 import { Kingfisher } from "@/components/kingfisher";
 
 const FEATURES = [
@@ -30,9 +33,12 @@ const FEATURES = [
   },
 ];
 
-export default async function LandingPage() {
-  const { userId } = await auth();
-  if (userId) redirect("/dashboard");
+export default function LandingPage() {
+  const router = useRouter();
+  const { isLoaded, isSignedIn } = useAuth();
+  useEffect(() => {
+    if (isLoaded && isSignedIn) router.replace("/dashboard");
+  }, [isLoaded, isSignedIn, router]);
 
   return (
     <div className="-mx-8 -my-10 min-h-screen bg-paper text-ink">

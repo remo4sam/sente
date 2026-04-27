@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { SignIn } from "@clerk/nextjs";
+import { SignIn } from "@clerk/clerk-react";
+import { ClientOnly } from "@/components/client-only";
 import { Kingfisher } from "@/components/kingfisher";
 
 export default function Page() {
@@ -29,7 +32,9 @@ export default function Page() {
           <h1 className="mb-8 font-display text-4xl font-light leading-tight">
             Open the <span className="font-display-italic font-medium text-leaf">ledger</span>.
           </h1>
-          <SignIn routing="hash" />
+          <ClientOnly>
+            <SignIn routing="hash" />
+          </ClientOnly>
         </div>
       </div>
     </div>

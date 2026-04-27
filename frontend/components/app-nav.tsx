@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { UserButton, useUser } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/clerk-react";
 import { Activity, BarChart3, MessageSquare, Receipt, Upload } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Kingfisher } from "@/components/kingfisher";
