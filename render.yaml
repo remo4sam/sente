@@ -1,0 +1,38 @@
+# Alternative deployment config for Render (https://render.com).
+# Use this if Railway's free tier doesn't suit you.
+#
+# Render's free tier sleeps after 15 minutes of inactivity (cold starts ~30s),
+# but it's fine for a capstone demo.
+
+services:
+  - type: web
+    name: sente-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter   # $7/mo. Change to "free" if you don't mind cold starts.
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false   # Set in dashboard, never committed
+      - key: PARSER_MODEL
+        value: claude-haiku-4-5-20251001
+      - key: CATEGORIZER_MODEL
+        value: claude-haiku-4-5-20251001
+      - key: CHAT_MODEL
+        value: claude-sonnet-4-6
+      - key: EMBEDDING_MODEL
+        value: sentence-transformers/bge-small-en-v1.5
+      - key: LOG_LEVEL
+        value: INFO
+      - key: CORS_ORIGINS
+        sync: false   # e.g. https://sente.vercel.app
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sente-db
+          property: connectionString
+
+databases:
+  - name: sente-db
+    plan: starter   # $7/mo. Free tier expires after 90 days.
+    databaseName: sente
+    user: sente

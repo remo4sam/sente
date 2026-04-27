@@ -15,11 +15,6 @@ class Settings(BaseSettings):
     embedding_model: str = "sentence-transformers/bge-small-en-v1.5"
     cors_origins: str = "http://localhost:3000"
 
-    # LangSmith — off by default; the wrapper is a no-op when tracing=False.
-    langsmith_tracing: bool = False
-    langsmith_api_key: str = ""
-    langsmith_project: str = "sente"
-
     @property
     def cors_origins_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]

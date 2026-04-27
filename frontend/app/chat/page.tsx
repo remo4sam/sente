@@ -1,8 +1,6 @@
 import { ChatPanel } from "@/components/chat-panel";
-import { AppLayout } from "@/components/layouts/app-layout";
-import type { NextPageWithLayout } from "@/lib/page-types";
 
-const ChatPage: NextPageWithLayout = () => {
+export default function ChatPage() {
   return (
     <div className="space-y-6">
       <div>
@@ -14,8 +12,4 @@ const ChatPage: NextPageWithLayout = () => {
       <ChatPanel />
     </div>
   );
-};
-
-ChatPage.getLayout = (page) => <AppLayout>{page}</AppLayout>;
-
-export default ChatPage;
+}

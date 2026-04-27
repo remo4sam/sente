@@ -1,0 +1,74 @@
+=== Categorizer Eval ===
+Train size:    108
+Hold-out size: 46
+
+=== Zero-shot (no few-shots) ===
+Overall: 89.1% (41/46)
+
+Per-class (recall):
+  airtime_bundles              100.0%   (n=6)
+  family_sent                  100.0%   (n=5)
+  transport                     80.0%   (n=5)
+  cash_withdrawal              100.0%   (n=4)
+  groceries_food               100.0%   (n=4)
+  dining_entertainment         100.0%   (n=3)
+  utilities                     66.7%   (n=3)
+  savings_investments           50.0%   (n=2)
+  cash_deposit                 100.0%   (n=2)
+  fees_charges                 100.0%   (n=2)
+  loan_credit                  100.0%   (n=2)
+  self_transfer                100.0%   (n=2)
+  family_received              100.0%   (n=2)
+  healthcare                   100.0%   (n=1)
+  other                          0.0%   (n=1)
+  rent_housing                 100.0%   (n=1)
+  education                      0.0%   (n=1)
+
+=== Oracle (all train as few-shot pool) ===
+Overall: 97.8% (45/46)
+
+Per-class (recall):
+  airtime_bundles              100.0%   (n=6)
+  family_sent                  100.0%   (n=5)
+  transport                    100.0%   (n=5)
+  cash_withdrawal              100.0%   (n=4)
+  groceries_food               100.0%   (n=4)
+  dining_entertainment         100.0%   (n=3)
+  utilities                    100.0%   (n=3)
+  savings_investments          100.0%   (n=2)
+  cash_deposit                 100.0%   (n=2)
+  fees_charges                 100.0%   (n=2)
+  loan_credit                  100.0%   (n=2)
+  self_transfer                100.0%   (n=2)
+  family_received              100.0%   (n=2)
+  healthcare                   100.0%   (n=1)
+  other                        100.0%   (n=1)
+  rent_housing                 100.0%   (n=1)
+  education                      0.0%   (n=1)
+
+=== Top confusions (zero-shot) ===
+  transport                    -> utilities                    (1)
+  utilities                    -> airtime_bundles              (1)
+  other                        -> fees_charges                 (1)
+  education                    -> utilities                    (1)
+
+=== Top confusions (oracle) ===
+  education                    -> utilities                    (1)
+
+=== Accuracy curve (random order, mean across seeds) ===
+  n=  0   acc=91.3%  stdev=0.000
+  n= 20   acc=97.8%  stdev=0.000
+  n= 40   acc=97.8%  stdev=0.000
+  n= 60   acc=97.8%  stdev=0.000
+  n= 80   acc=97.8%  stdev=0.000
+  n=100   acc=97.8%  stdev=0.000
+  n=108   acc=97.8%  stdev=0.000
+
+=== Accuracy curve (stratified order, mean across seeds) ===
+  n=  0   acc=87.0%  stdev=0.000
+  n= 20   acc=97.8%  stdev=0.000
+  n= 40   acc=97.8%  stdev=0.000
+  n= 60   acc=97.8%  stdev=0.000
+  n= 80   acc=97.8%  stdev=0.000
+  n=100   acc=97.8%  stdev=0.000
+  n=108   acc=97.8%  stdev=0.000

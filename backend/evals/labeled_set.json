@@ -1,0 +1,1546 @@
+{
+  "version": "1.0",
+  "count": 154,
+  "examples": [
+    {
+      "id": "ex_0049",
+      "transaction_text": "type=airtime | direction=out | amount=26000 UGX | counterparty=0737110622 | network=Airtel",
+      "raw_sms": "Top up of UGX 26,000 for 0737110622. Bal : UGX 1,095,351.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 26000.0,
+      "counterparty_name": "Prepaid Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0016",
+      "transaction_text": "type=sent | direction=out | amount=29500 UGX | counterparty=NAKITENDE JOYCE | network=Airtel",
+      "raw_sms": "SENT.TID 438472520493. UGX 29,500 to NAKITENDE JOYCE 0732321324. Fee UGX 0. Bal UGX 507,167. Date 08-March-2026 17:56.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 29500.0,
+      "counterparty_name": "NAKITENDE JOYCE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0096",
+      "transaction_text": "type=bill_payment | direction=out | amount=160500 UGX | counterparty=ENDIRO COFFEE | network=Airtel",
+      "raw_sms": "PAID.TID 167091801483. UGX 160,500 to ENDIRO COFFEE Charge UGX 1,000. Bal UGX 1,283,488. 28-March-2026 15:36",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 160500.0,
+      "counterparty_name": "ENDIRO COFFEE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0076",
+      "transaction_text": "type=bill_payment | direction=out | amount=76500 UGX | counterparty=KALUNGA MARKET | network=Airtel",
+      "raw_sms": "PAID.TID 570439558680. UGX 76,500 to KALUNGA MARKET Charge UGX 500. Bal UGX 1,392,310. 20-April-2026 07:22",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 76500.0,
+      "counterparty_name": "KALUNGA MARKET",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0063",
+      "transaction_text": "type=bill_payment | direction=out | amount=55500 UGX | counterparty=SAFEBODA UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 949994808961. UGX 55,500 to SAFEBODA UGANDA Charge UGX 1,000. Bal UGX 1,229,903. 23-April-2026 19:24",
+      "category": "transport",
+      "direction": "out",
+      "amount": 55500.0,
+      "counterparty_name": "SAFEBODA UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0126",
+      "transaction_text": "type=withdraw | direction=out | amount=87500 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 801364526954. UGX87,500 with Agent ID: 362246.Fee UGX 1,000.Tax UGX 500.Bal UGX 894,840. 29-March-2026 17:37.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 87500.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0040",
+      "transaction_text": "type=airtime | direction=out | amount=83000 UGX | counterparty=0743710895 | network=Airtel",
+      "raw_sms": "Top up of UGX 83,000 for 0743710895. Bal : UGX 1,622,154.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 83000.0,
+      "counterparty_name": "Data bundle Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0050",
+      "transaction_text": "type=airtime | direction=out | amount=10500 UGX | counterparty=0749508103 | network=Airtel",
+      "raw_sms": "Top up of UGX 10,500 for 0749508103. Bal : UGX 1,783,416.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 10500.0,
+      "counterparty_name": "Bundles Mobile APP",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0141",
+      "transaction_text": "type=bill_payment | direction=out | amount=4000 UGX | counterparty=AIRTEL EXCISE DUTY | network=Airtel",
+      "raw_sms": "PAID.TID 505675310918. UGX 4,000 to AIRTEL EXCISE DUTY Charge UGX 1,000. Bal UGX 1,411,111. 26-April-2026 10:24",
+      "category": "fees_charges",
+      "direction": "out",
+      "amount": 4000.0,
+      "counterparty_name": "AIRTEL EXCISE DUTY",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0029",
+      "transaction_text": "type=bill_payment | direction=out | amount=69500 UGX | counterparty=STARLINK UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 164290117190. UGX 69,500 to STARLINK UGANDA Charge UGX 1,000. Bal UGX 1,219,629. 13-March-2026 15:13",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 69500.0,
+      "counterparty_name": "STARLINK UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0001",
+      "transaction_text": "type=sent | direction=out | amount=236000 UGX | counterparty=BROTHER ALEX | network=Airtel",
+      "raw_sms": "SENT.TID 354342113419. UGX 236,000 to BROTHER ALEX 0704335942. Fee UGX 1,000. Bal UGX 1,064,806. Date 03-March-2026 06:05.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 236000.0,
+      "counterparty_name": "BROTHER ALEX",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0055",
+      "transaction_text": "type=airtime | direction=out | amount=33000 UGX | counterparty=0777705062 | network=Airtel",
+      "raw_sms": "Top up of UGX 33,000 for 0777705062. Bal : UGX 412,760.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 33000.0,
+      "counterparty_name": "Data bundle Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0137",
+      "transaction_text": "type=deposit | direction=in | amount=64000 UGX | counterparty=Agent 783213 | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 64,000 from Agent 783213 Agent 783213. Bal UGX 1,575,791. TID 840317438269. 17-March-2026 09:29",
+      "category": "cash_deposit",
+      "direction": "in",
+      "amount": 64000.0,
+      "counterparty_name": "Agent 783213",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0036",
+      "transaction_text": "type=bill_payment | direction=out | amount=167500 UGX | counterparty=UMEME LTD YAKA | network=Airtel",
+      "raw_sms": "PAID.TID 504776119396. UGX 167,500 to UMEME LTD YAKA Charge UGX 0. Bal UGX 602,661. 14-March-2026 22:16",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 167500.0,
+      "counterparty_name": "UMEME LTD YAKA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0149",
+      "transaction_text": "type=deposit | direction=in | amount=4371500 UGX | counterparty=SC BANK | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 4,371,500 from SC BANK SC BANK. Bal UGX 898,960. TID 541725783739. 20-March-2026 20:41",
+      "category": "self_transfer",
+      "direction": "in",
+      "amount": 4371500.0,
+      "counterparty_name": "SC BANK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0059",
+      "transaction_text": "type=bill_payment | direction=out | amount=69000 UGX | counterparty=SHELL KAMPALA RD | network=Airtel",
+      "raw_sms": "PAID.TID 403386445743. UGX 69,000 to SHELL KAMPALA RD Charge UGX 1,000. Bal UGX 1,611,027. 18-April-2026 13:53",
+      "category": "transport",
+      "direction": "out",
+      "amount": 69000.0,
+      "counterparty_name": "SHELL KAMPALA RD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0012",
+      "transaction_text": "type=sent | direction=out | amount=259500 UGX | counterparty=BROTHER ALEX | network=Airtel",
+      "raw_sms": "SENT.TID 847373620112. UGX 259,500 to BROTHER ALEX 0785476583. Fee UGX 0. Bal UGX 1,516,463. Date 03-April-2026 14:35.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 259500.0,
+      "counterparty_name": "BROTHER ALEX",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0100",
+      "transaction_text": "type=bill_payment | direction=out | amount=185500 UGX | counterparty=CAFE JAVAS KAMPALA | network=Airtel",
+      "raw_sms": "PAID.TID 790593150547. UGX 185,500 to CAFE JAVAS KAMPALA Charge UGX 1,000. Bal UGX 1,241,878. 15-March-2026 14:50",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 185500.0,
+      "counterparty_name": "CAFE JAVAS KAMPALA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0099",
+      "transaction_text": "type=bill_payment | direction=out | amount=84500 UGX | counterparty=NETFLIX UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 412273997497. UGX 84,500 to NETFLIX UGANDA Charge UGX 500. Bal UGX 1,479,271. 03-March-2026 13:18",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 84500.0,
+      "counterparty_name": "NETFLIX UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0069",
+      "transaction_text": "type=bill_payment | direction=out | amount=74000 UGX | counterparty=SHELL KAMPALA RD | network=Airtel",
+      "raw_sms": "PAID.TID 189485261008. UGX 74,000 to SHELL KAMPALA RD Charge UGX 0. Bal UGX 991,304. 18-April-2026 19:16",
+      "category": "transport",
+      "direction": "out",
+      "amount": 74000.0,
+      "counterparty_name": "SHELL KAMPALA RD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0135",
+      "transaction_text": "type=deposit | direction=in | amount=396500 UGX | counterparty=Agent 783213 | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 396,500 from Agent 783213 Agent 783213. Bal UGX 300,188. TID 185739973851. 21-April-2026 09:29",
+      "category": "cash_deposit",
+      "direction": "in",
+      "amount": 396500.0,
+      "counterparty_name": "Agent 783213",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0119",
+      "transaction_text": "type=withdraw | direction=out | amount=259500 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 961009905968. UGX259,500 with Agent ID: 753534.Fee UGX 500.Tax UGX 2,000.Bal UGX 560,793. 25-April-2026 10:04.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 259500.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0131",
+      "transaction_text": "type=deposit | direction=in | amount=190000 UGX | counterparty=Agent 992001 | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 190,000 from Agent 992001 Agent 992001. Bal UGX 87,675. TID 811364515897. 10-April-2026 09:57",
+      "category": "cash_deposit",
+      "direction": "in",
+      "amount": 190000.0,
+      "counterparty_name": "Agent 992001",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0066",
+      "transaction_text": "type=bill_payment | direction=out | amount=102500 UGX | counterparty=SAFEBODA UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 686788125561. UGX 102,500 to SAFEBODA UGANDA Charge UGX 500. Bal UGX 61,552. 22-March-2026 18:46",
+      "category": "transport",
+      "direction": "out",
+      "amount": 102500.0,
+      "counterparty_name": "SAFEBODA UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0009",
+      "transaction_text": "type=sent | direction=out | amount=275500 UGX | counterparty=UNCLE PATRICK | network=Airtel",
+      "raw_sms": "SENT.TID 251461507038. UGX 275,500 to UNCLE PATRICK 0785408072. Fee UGX 1,000. Bal UGX 522,215. Date 26-March-2026 20:09.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 275500.0,
+      "counterparty_name": "UNCLE PATRICK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0148",
+      "transaction_text": "type=deposit | direction=in | amount=4409500 UGX | counterparty=URA STANBIC BANK U LTD | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 4,409,500 from URA STANBIC BANK U LTD URA STANBIC BANK U LTD. Bal UGX 952,924. TID 218513893124. 08-March-2026 08:30",
+      "category": "self_transfer",
+      "direction": "in",
+      "amount": 4409500.0,
+      "counterparty_name": "URA STANBIC BANK U LTD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0081",
+      "transaction_text": "type=bill_payment | direction=out | amount=187000 UGX | counterparty=NAKUMATT MBARARA | network=Airtel",
+      "raw_sms": "PAID.TID 298964420838. UGX 187,000 to NAKUMATT MBARARA Charge UGX 0. Bal UGX 1,027,466. 02-March-2026 21:54",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 187000.0,
+      "counterparty_name": "NAKUMATT MBARARA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0004",
+      "transaction_text": "type=sent | direction=out | amount=155000 UGX | counterparty=OPIO DAVID | network=Airtel",
+      "raw_sms": "SENT.TID 690383734374. UGX 155,000 to OPIO DAVID 0715918715. Fee UGX 500. Bal UGX 266,779. Date 21-April-2026 07:46.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 155000.0,
+      "counterparty_name": "OPIO DAVID",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0138",
+      "transaction_text": "type=bill_payment | direction=out | amount=9500 UGX | counterparty=MONTHLY MAINTENANCE FEE | network=Airtel",
+      "raw_sms": "PAID.TID 356301471392. UGX 9,500 to MONTHLY MAINTENANCE FEE Charge UGX 0. Bal UGX 993,758. 25-March-2026 17:06",
+      "category": "fees_charges",
+      "direction": "out",
+      "amount": 9500.0,
+      "counterparty_name": "MONTHLY MAINTENANCE FEE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0147",
+      "transaction_text": "type=deposit | direction=in | amount=1179500 UGX | counterparty=SC BANK | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 1,179,500 from SC BANK SC BANK. Bal UGX 561,516. TID 289046340270. 01-March-2026 17:50",
+      "category": "self_transfer",
+      "direction": "in",
+      "amount": 1179500.0,
+      "counterparty_name": "SC BANK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0030",
+      "transaction_text": "type=bill_payment | direction=out | amount=45500 UGX | counterparty=ROKE TELKOM | network=Airtel",
+      "raw_sms": "PAID.TID 740165486786. UGX 45,500 to ROKE TELKOM Charge UGX 1,000. Bal UGX 1,004,897. 17-April-2026 16:03",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 45500.0,
+      "counterparty_name": "ROKE TELKOM",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0052",
+      "transaction_text": "type=bill_payment | direction=out | amount=74500 UGX | counterparty=Prepaid Mobile App | network=Airtel",
+      "raw_sms": "PAID.TID 739029968283. UGX 74,500 to Prepaid Mobile App Charge UGX 1,000. Bal UGX 1,277,261. 20-March-2026 18:35",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 74500.0,
+      "counterparty_name": "Prepaid Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0062",
+      "transaction_text": "type=bill_payment | direction=out | amount=57500 UGX | counterparty=UBER UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 694126611586. UGX 57,500 to UBER UGANDA Charge UGX 500. Bal UGX 982,114. 05-March-2026 19:26",
+      "category": "transport",
+      "direction": "out",
+      "amount": 57500.0,
+      "counterparty_name": "UBER UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0085",
+      "transaction_text": "type=bill_payment | direction=out | amount=165500 UGX | counterparty=QUALITY SUPERMARKET | network=Airtel",
+      "raw_sms": "PAID.TID 436052436803. UGX 165,500 to QUALITY SUPERMARKET Charge UGX 1,000. Bal UGX 1,397,425. 15-March-2026 18:44",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 165500.0,
+      "counterparty_name": "QUALITY SUPERMARKET",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0060",
+      "transaction_text": "type=bill_payment | direction=out | amount=64000 UGX | counterparty=SHELL KAMPALA RD | network=Airtel",
+      "raw_sms": "PAID.TID 416597264475. UGX 64,000 to SHELL KAMPALA RD Charge UGX 500. Bal UGX 496,768. 18-March-2026 20:04",
+      "category": "transport",
+      "direction": "out",
+      "amount": 64000.0,
+      "counterparty_name": "SHELL KAMPALA RD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0025",
+      "transaction_text": "type=bill_payment | direction=out | amount=1498000 UGX | counterparty=MUKASA PROPERTIES LTD | network=Airtel",
+      "raw_sms": "PAID.TID 405730753142. UGX 1,498,000 to MUKASA PROPERTIES LTD Charge UGX 0. Bal UGX 975,201. 29-March-2026 10:27",
+      "category": "rent_housing",
+      "direction": "out",
+      "amount": 1498000.0,
+      "counterparty_name": "MUKASA PROPERTIES LTD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0111",
+      "transaction_text": "type=bill_payment | direction=out | amount=246000 UGX | counterparty=SACCO DEPOSIT NAKAWA | network=Airtel",
+      "raw_sms": "PAID.TID 702442419256. UGX 246,000 to SACCO DEPOSIT NAKAWA Charge UGX 500. Bal UGX 279,754. 18-April-2026 07:13",
+      "category": "savings_investments",
+      "direction": "out",
+      "amount": 246000.0,
+      "counterparty_name": "SACCO DEPOSIT NAKAWA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0002",
+      "transaction_text": "type=sent | direction=out | amount=234500 UGX | counterparty=BROTHER ALEX | network=Airtel",
+      "raw_sms": "SENT.TID 990253050256. UGX 234,500 to BROTHER ALEX 0728090293. Fee UGX 0. Bal UGX 1,828,054. Date 15-March-2026 20:37.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 234500.0,
+      "counterparty_name": "BROTHER ALEX",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0123",
+      "transaction_text": "type=withdraw | direction=out | amount=270500 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 720245039395. UGX270,500 with Agent ID: 278240.Fee UGX 0.Tax UGX 0.Bal UGX 1,434,839. 10-March-2026 13:33.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 270500.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0136",
+      "transaction_text": "type=deposit | direction=in | amount=791500 UGX | counterparty=Agent 992001 | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 791,500 from Agent 992001 Agent 992001. Bal UGX 772,085. TID 713341033639. 13-April-2026 18:54",
+      "category": "cash_deposit",
+      "direction": "in",
+      "amount": 791500.0,
+      "counterparty_name": "Agent 992001",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0114",
+      "transaction_text": "type=received | direction=in | amount=189500 UGX | counterparty=XENO INVESTMENT | network=Airtel",
+      "raw_sms": "Received money UGX 189,500 from XENO INVESTMENT 0783290229. New Bal UGX 1,938,297. TID 307805919610. 27-March-2026 21:30",
+      "category": "loan_credit",
+      "direction": "in",
+      "amount": 189500.0,
+      "counterparty_name": "XENO INVESTMENT",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0037",
+      "transaction_text": "type=bill_payment | direction=out | amount=243000 UGX | counterparty=STARLINK UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 820726006289. UGX 243,000 to STARLINK UGANDA Charge UGX 0. Bal UGX 1,114,269. 04-April-2026 15:39",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 243000.0,
+      "counterparty_name": "STARLINK UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0153",
+      "transaction_text": "type=bill_payment | direction=out | amount=90500 UGX | counterparty=UNKNOWN MERCHANT | network=Airtel",
+      "raw_sms": "PAID.TID 551952938516. UGX 90,500 to UNKNOWN MERCHANT Charge UGX 500. Bal UGX 715,791. 08-March-2026 12:27",
+      "category": "other",
+      "direction": "out",
+      "amount": 90500.0,
+      "counterparty_name": "UNKNOWN MERCHANT",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0046",
+      "transaction_text": "type=airtime | direction=out | amount=5000 UGX | counterparty=0746891254 | network=Airtel",
+      "raw_sms": "Top up of UGX 5,000 for 0746891254. Bal : UGX 1,817,679.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 5000.0,
+      "counterparty_name": "Data bundle Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0132",
+      "transaction_text": "type=deposit | direction=in | amount=84000 UGX | counterparty=Agent 783213 | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 84,000 from Agent 783213 Agent 783213. Bal UGX 1,912,627. TID 199348657231. 07-April-2026 17:46",
+      "category": "cash_deposit",
+      "direction": "in",
+      "amount": 84000.0,
+      "counterparty_name": "Agent 783213",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0022",
+      "transaction_text": "type=received | direction=in | amount=117500 UGX | counterparty=COUSIN MARK | network=Airtel",
+      "raw_sms": "Received money UGX 117,500 from COUSIN MARK 0732582524. New Bal UGX 1,698,443. TID 623060957599. 16-April-2026 21:15",
+      "category": "family_received",
+      "direction": "in",
+      "amount": 117500.0,
+      "counterparty_name": "COUSIN MARK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0007",
+      "transaction_text": "type=sent | direction=out | amount=107500 UGX | counterparty=MAMA SARAH | network=Airtel",
+      "raw_sms": "SENT.TID 518597220210. UGX 107,500 to MAMA SARAH 0784684531. Fee UGX 1,000. Bal UGX 571,121. Date 04-April-2026 13:10.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 107500.0,
+      "counterparty_name": "MAMA SARAH",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0032",
+      "transaction_text": "type=bill_payment | direction=out | amount=202500 UGX | counterparty=UMEME LTD YAKA | network=Airtel",
+      "raw_sms": "PAID.TID 726594012825. UGX 202,500 to UMEME LTD YAKA Charge UGX 1,000. Bal UGX 521,351. 25-April-2026 13:25",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 202500.0,
+      "counterparty_name": "UMEME LTD YAKA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0116",
+      "transaction_text": "type=bill_payment | direction=out | amount=325500 UGX | counterparty=WEWOLE REPAYMENT | network=Airtel",
+      "raw_sms": "PAID.TID 364988738014. UGX 325,500 to WEWOLE REPAYMENT Charge UGX 500. Bal UGX 1,204,146. 31-March-2026 17:21",
+      "category": "loan_credit",
+      "direction": "out",
+      "amount": 325500.0,
+      "counterparty_name": "WEWOLE REPAYMENT",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0057",
+      "transaction_text": "type=airtime | direction=out | amount=73000 UGX | counterparty=0786323376 | network=Airtel",
+      "raw_sms": "Top up of UGX 73,000 for 0786323376. Bal : UGX 979,427.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 73000.0,
+      "counterparty_name": "Data bundle Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0026",
+      "transaction_text": "type=bill_payment | direction=out | amount=1307500 UGX | counterparty=MUKASA PROPERTIES LTD | network=Airtel",
+      "raw_sms": "PAID.TID 281403868608. UGX 1,307,500 to MUKASA PROPERTIES LTD Charge UGX 500. Bal UGX 857,312. 21-April-2026 09:03",
+      "category": "rent_housing",
+      "direction": "out",
+      "amount": 1307500.0,
+      "counterparty_name": "MUKASA PROPERTIES LTD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0056",
+      "transaction_text": "type=bundle | direction=out | amount=20500 UGX | counterparty=Data bundle Mobile App | network=Airtel",
+      "raw_sms": "PAID.TID 868618611504. UGX 20,500 to Data bundle Mobile App Charge UGX 500. Bal UGX 1,091,236. 11-April-2026 06:57",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 20500.0,
+      "counterparty_name": "Data bundle Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0038",
+      "transaction_text": "type=airtime | direction=out | amount=72500 UGX | counterparty=0725569244 | network=Airtel",
+      "raw_sms": "Top up of UGX 72,500 for 0725569244. Bal : UGX 247,071.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 72500.0,
+      "counterparty_name": "Prepaid Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0133",
+      "transaction_text": "type=deposit | direction=in | amount=475000 UGX | counterparty=Agent 783213 | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 475,000 from Agent 783213 Agent 783213. Bal UGX 1,843,071. TID 696083533662. 12-March-2026 12:08",
+      "category": "cash_deposit",
+      "direction": "in",
+      "amount": 475000.0,
+      "counterparty_name": "Agent 783213",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0075",
+      "transaction_text": "type=bill_payment | direction=out | amount=22000 UGX | counterparty=UBER UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 949102978448. UGX 22,000 to UBER UGANDA Charge UGX 1,000. Bal UGX 637,464. 07-April-2026 13:06",
+      "category": "transport",
+      "direction": "out",
+      "amount": 22000.0,
+      "counterparty_name": "UBER UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0042",
+      "transaction_text": "type=airtime | direction=out | amount=76500 UGX | counterparty=0707003042 | network=Airtel",
+      "raw_sms": "Top up of UGX 76,500 for 0707003042. Bal : UGX 651,464.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 76500.0,
+      "counterparty_name": "Bundles Mobile APP",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0107",
+      "transaction_text": "type=bill_payment | direction=out | amount=1422000 UGX | counterparty=COURSERA UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 861977213598. UGX 1,422,000 to COURSERA UGANDA Charge UGX 500. Bal UGX 1,044,073. 07-March-2026 11:21",
+      "category": "education",
+      "direction": "out",
+      "amount": 1422000.0,
+      "counterparty_name": "COURSERA UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0143",
+      "transaction_text": "type=bill_payment | direction=out | amount=368000 UGX | counterparty=CENTENARY BANK | network=Airtel",
+      "raw_sms": "PAID.TID 498811121833. UGX 368,000 to CENTENARY BANK Charge UGX 1,000. Bal UGX 213,361. 14-April-2026 17:13",
+      "category": "self_transfer",
+      "direction": "out",
+      "amount": 368000.0,
+      "counterparty_name": "CENTENARY BANK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0005",
+      "transaction_text": "type=sent | direction=out | amount=205000 UGX | counterparty=BROTHER ALEX | network=Airtel",
+      "raw_sms": "SENT.TID 147543377362. UGX 205,000 to BROTHER ALEX 0742338687. Fee UGX 0. Bal UGX 1,391,769. Date 06-April-2026 12:45.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 205000.0,
+      "counterparty_name": "BROTHER ALEX",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0152",
+      "transaction_text": "type=bill_payment | direction=out | amount=49500 UGX | counterparty=REFUND PROCESSING | network=Airtel",
+      "raw_sms": "PAID.TID 655999474067. UGX 49,500 to REFUND PROCESSING Charge UGX 500. Bal UGX 1,274,672. 08-April-2026 22:18",
+      "category": "other",
+      "direction": "out",
+      "amount": 49500.0,
+      "counterparty_name": "REFUND PROCESSING",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0101",
+      "transaction_text": "type=bill_payment | direction=out | amount=237500 UGX | counterparty=CASE CLINIC | network=Airtel",
+      "raw_sms": "PAID.TID 177920311528. UGX 237,500 to CASE CLINIC Charge UGX 0. Bal UGX 130,070. 08-March-2026 13:41",
+      "category": "healthcare",
+      "direction": "out",
+      "amount": 237500.0,
+      "counterparty_name": "CASE CLINIC",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0068",
+      "transaction_text": "type=bill_payment | direction=out | amount=15500 UGX | counterparty=UBER UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 599125280348. UGX 15,500 to UBER UGANDA Charge UGX 500. Bal UGX 690,445. 17-March-2026 18:20",
+      "category": "transport",
+      "direction": "out",
+      "amount": 15500.0,
+      "counterparty_name": "UBER UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0074",
+      "transaction_text": "type=bill_payment | direction=out | amount=9500 UGX | counterparty=TOTAL ENERGIES NAKAWA | network=Airtel",
+      "raw_sms": "PAID.TID 516432181410. UGX 9,500 to TOTAL ENERGIES NAKAWA Charge UGX 1,000. Bal UGX 836,844. 29-April-2026 15:36",
+      "category": "transport",
+      "direction": "out",
+      "amount": 9500.0,
+      "counterparty_name": "TOTAL ENERGIES NAKAWA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0070",
+      "transaction_text": "type=bill_payment | direction=out | amount=16000 UGX | counterparty=TOTAL ENERGIES NAKAWA | network=Airtel",
+      "raw_sms": "PAID.TID 175806791671. UGX 16,000 to TOTAL ENERGIES NAKAWA Charge UGX 1,000. Bal UGX 1,643,364. 30-April-2026 17:14",
+      "category": "transport",
+      "direction": "out",
+      "amount": 16000.0,
+      "counterparty_name": "TOTAL ENERGIES NAKAWA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0144",
+      "transaction_text": "type=deposit | direction=in | amount=596000 UGX | counterparty=CENTENARY BANK | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 596,000 from CENTENARY BANK CENTENARY BANK. Bal UGX 449,818. TID 826243207371. 26-March-2026 14:12",
+      "category": "self_transfer",
+      "direction": "in",
+      "amount": 596000.0,
+      "counterparty_name": "CENTENARY BANK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0006",
+      "transaction_text": "type=sent | direction=out | amount=71500 UGX | counterparty=UNCLE PATRICK | network=Airtel",
+      "raw_sms": "SENT.TID 277660601409. UGX 71,500 to UNCLE PATRICK 0735479144. Fee UGX 500. Bal UGX 781,325. Date 25-March-2026 14:29.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 71500.0,
+      "counterparty_name": "UNCLE PATRICK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0010",
+      "transaction_text": "type=sent | direction=out | amount=239000 UGX | counterparty=BROTHER ALEX | network=Airtel",
+      "raw_sms": "SENT.TID 254608246768. UGX 239,000 to BROTHER ALEX 0711790481. Fee UGX 500. Bal UGX 1,073,554. Date 27-April-2026 18:23.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 239000.0,
+      "counterparty_name": "BROTHER ALEX",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0041",
+      "transaction_text": "type=airtime | direction=out | amount=58500 UGX | counterparty=0781604451 | network=Airtel",
+      "raw_sms": "Top up of UGX 58,500 for 0781604451. Bal : UGX 162,797.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 58500.0,
+      "counterparty_name": "Prepaid Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0094",
+      "transaction_text": "type=bill_payment | direction=out | amount=48500 UGX | counterparty=CAFE JAVAS KAMPALA | network=Airtel",
+      "raw_sms": "PAID.TID 374851785492. UGX 48,500 to CAFE JAVAS KAMPALA Charge UGX 1,000. Bal UGX 253,410. 10-March-2026 15:05",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 48500.0,
+      "counterparty_name": "CAFE JAVAS KAMPALA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0112",
+      "transaction_text": "type=bill_payment | direction=out | amount=470500 UGX | counterparty=WEWOLE SAVINGS | network=Airtel",
+      "raw_sms": "PAID.TID 768425855938. UGX 470,500 to WEWOLE SAVINGS Charge UGX 0. Bal UGX 1,681,282. 14-April-2026 21:07",
+      "category": "savings_investments",
+      "direction": "out",
+      "amount": 470500.0,
+      "counterparty_name": "WEWOLE SAVINGS",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0020",
+      "transaction_text": "type=received | direction=in | amount=223000 UGX | counterparty=DAD OPIO | network=Airtel",
+      "raw_sms": "Received money UGX 223,000 from DAD OPIO 0704841005. New Bal UGX 153,883. TID 105240793782. 02-March-2026 13:37",
+      "category": "family_received",
+      "direction": "in",
+      "amount": 223000.0,
+      "counterparty_name": "DAD OPIO",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0087",
+      "transaction_text": "type=bill_payment | direction=out | amount=153500 UGX | counterparty=NAKUMATT MBARARA | network=Airtel",
+      "raw_sms": "PAID.TID 890792195524. UGX 153,500 to NAKUMATT MBARARA Charge UGX 500. Bal UGX 408,878. 20-March-2026 14:14",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 153500.0,
+      "counterparty_name": "NAKUMATT MBARARA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0058",
+      "transaction_text": "type=bill_payment | direction=out | amount=132000 UGX | counterparty=SHELL KAMPALA RD | network=Airtel",
+      "raw_sms": "PAID.TID 916727364232. UGX 132,000 to SHELL KAMPALA RD Charge UGX 500. Bal UGX 1,811,685. 28-March-2026 20:57",
+      "category": "transport",
+      "direction": "out",
+      "amount": 132000.0,
+      "counterparty_name": "SHELL KAMPALA RD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0053",
+      "transaction_text": "type=bundle | direction=out | amount=61500 UGX | counterparty=Bundles Mobile APP | network=Airtel",
+      "raw_sms": "PAID.TID 409601839368. UGX 61,500 to Bundles Mobile APP Charge UGX 1,000. Bal UGX 1,085,981. 29-March-2026 20:43",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 61500.0,
+      "counterparty_name": "Bundles Mobile APP",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0048",
+      "transaction_text": "type=airtime | direction=out | amount=78000 UGX | counterparty=0717462506 | network=Airtel",
+      "raw_sms": "Top up of UGX 78,000 for 0717462506. Bal : UGX 920,184.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 78000.0,
+      "counterparty_name": "Data bundle Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0122",
+      "transaction_text": "type=withdraw | direction=out | amount=277000 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 147368967775. UGX277,000 with Agent ID: 407618.Fee UGX 0.Tax UGX 500.Bal UGX 685,262. 11-March-2026 15:57.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 277000.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0067",
+      "transaction_text": "type=bill_payment | direction=out | amount=147000 UGX | counterparty=TOTAL ENERGIES NAKAWA | network=Airtel",
+      "raw_sms": "PAID.TID 570912023998. UGX 147,000 to TOTAL ENERGIES NAKAWA Charge UGX 500. Bal UGX 289,582. 12-April-2026 06:05",
+      "category": "transport",
+      "direction": "out",
+      "amount": 147000.0,
+      "counterparty_name": "TOTAL ENERGIES NAKAWA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0011",
+      "transaction_text": "type=sent | direction=out | amount=98000 UGX | counterparty=MAMA SARAH | network=Airtel",
+      "raw_sms": "SENT.TID 566779112532. UGX 98,000 to MAMA SARAH 0767402509. Fee UGX 0. Bal UGX 1,255,760. Date 10-April-2026 11:50.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 98000.0,
+      "counterparty_name": "MAMA SARAH",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0092",
+      "transaction_text": "type=bill_payment | direction=out | amount=156500 UGX | counterparty=CAFE JAVAS KAMPALA | network=Airtel",
+      "raw_sms": "PAID.TID 475553953855. UGX 156,500 to CAFE JAVAS KAMPALA Charge UGX 0. Bal UGX 391,638. 19-March-2026 21:30",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 156500.0,
+      "counterparty_name": "CAFE JAVAS KAMPALA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0083",
+      "transaction_text": "type=bill_payment | direction=out | amount=20000 UGX | counterparty=KALUNGA MARKET | network=Airtel",
+      "raw_sms": "PAID.TID 891310598800. UGX 20,000 to KALUNGA MARKET Charge UGX 500. Bal UGX 857,341. 03-April-2026 12:05",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 20000.0,
+      "counterparty_name": "KALUNGA MARKET",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0008",
+      "transaction_text": "type=sent | direction=out | amount=48500 UGX | counterparty=OPIO DAVID | network=Airtel",
+      "raw_sms": "SENT.TID 539441524732. UGX 48,500 to OPIO DAVID 0736279418. Fee UGX 0. Bal UGX 566,493. Date 15-March-2026 07:51.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 48500.0,
+      "counterparty_name": "OPIO DAVID",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0051",
+      "transaction_text": "type=bundle | direction=out | amount=87000 UGX | counterparty=Bundles Mobile APP | network=Airtel",
+      "raw_sms": "PAID.TID 844657758783. UGX 87,000 to Bundles Mobile APP Charge UGX 0. Bal UGX 1,573,951. 27-March-2026 16:25",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 87000.0,
+      "counterparty_name": "Bundles Mobile APP",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0072",
+      "transaction_text": "type=bill_payment | direction=out | amount=35000 UGX | counterparty=UBER UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 340293786713. UGX 35,000 to UBER UGANDA Charge UGX 1,000. Bal UGX 980,246. 31-March-2026 09:36",
+      "category": "transport",
+      "direction": "out",
+      "amount": 35000.0,
+      "counterparty_name": "UBER UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0018",
+      "transaction_text": "type=received | direction=in | amount=320000 UGX | counterparty=AUNTIE GRACE | network=Airtel",
+      "raw_sms": "Received money UGX 320,000 from AUNTIE GRACE 0736229731. New Bal UGX 1,588,905. TID 696695139934. 25-April-2026 19:13",
+      "category": "family_received",
+      "direction": "in",
+      "amount": 320000.0,
+      "counterparty_name": "AUNTIE GRACE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0091",
+      "transaction_text": "type=bill_payment | direction=out | amount=151500 UGX | counterparty=CAFE JAVAS KAMPALA | network=Airtel",
+      "raw_sms": "PAID.TID 928363733258. UGX 151,500 to CAFE JAVAS KAMPALA Charge UGX 0. Bal UGX 1,034,447. 19-March-2026 10:40",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 151500.0,
+      "counterparty_name": "CAFE JAVAS KAMPALA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0000",
+      "transaction_text": "type=sent | direction=out | amount=32500 UGX | counterparty=MAMA SARAH | network=Airtel",
+      "raw_sms": "SENT.TID 251282538206. UGX 32,500 to MAMA SARAH 0782458591. Fee UGX 0. Bal UGX 1,549,492. Date 17-April-2026 14:15.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 32500.0,
+      "counterparty_name": "MAMA SARAH",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0115",
+      "transaction_text": "type=bill_payment | direction=out | amount=262000 UGX | counterparty=WEWOLE REPAYMENT | network=Airtel",
+      "raw_sms": "PAID.TID 738176038125. UGX 262,000 to WEWOLE REPAYMENT Charge UGX 500. Bal UGX 1,388,996. 22-March-2026 22:17",
+      "category": "loan_credit",
+      "direction": "out",
+      "amount": 262000.0,
+      "counterparty_name": "WEWOLE REPAYMENT",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0043",
+      "transaction_text": "type=airtime | direction=out | amount=89000 UGX | counterparty=0724971793 | network=Airtel",
+      "raw_sms": "Top up of UGX 89,000 for 0724971793. Bal : UGX 1,859,164.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 89000.0,
+      "counterparty_name": "Data bundle Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0145",
+      "transaction_text": "type=bill_payment | direction=out | amount=514000 UGX | counterparty=SC BANK | network=Airtel",
+      "raw_sms": "PAID.TID 173895795270. UGX 514,000 to SC BANK Charge UGX 1,000. Bal UGX 1,745,254. 20-April-2026 16:15",
+      "category": "self_transfer",
+      "direction": "out",
+      "amount": 514000.0,
+      "counterparty_name": "SC BANK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0089",
+      "transaction_text": "type=bill_payment | direction=out | amount=283500 UGX | counterparty=KALUNGA MARKET | network=Airtel",
+      "raw_sms": "PAID.TID 314029509095. UGX 283,500 to KALUNGA MARKET Charge UGX 0. Bal UGX 626,273. 08-April-2026 15:06",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 283500.0,
+      "counterparty_name": "KALUNGA MARKET",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0093",
+      "transaction_text": "type=bill_payment | direction=out | amount=132000 UGX | counterparty=ENDIRO COFFEE | network=Airtel",
+      "raw_sms": "PAID.TID 179421446737. UGX 132,000 to ENDIRO COFFEE Charge UGX 1,000. Bal UGX 1,215,101. 08-March-2026 08:25",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 132000.0,
+      "counterparty_name": "ENDIRO COFFEE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0140",
+      "transaction_text": "type=bill_payment | direction=out | amount=10500 UGX | counterparty=MONTHLY MAINTENANCE FEE | network=Airtel",
+      "raw_sms": "PAID.TID 430872306667. UGX 10,500 to MONTHLY MAINTENANCE FEE Charge UGX 0. Bal UGX 1,038,108. 27-March-2026 09:08",
+      "category": "fees_charges",
+      "direction": "out",
+      "amount": 10500.0,
+      "counterparty_name": "MONTHLY MAINTENANCE FEE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0139",
+      "transaction_text": "type=bill_payment | direction=out | amount=15000 UGX | counterparty=MONTHLY MAINTENANCE FEE | network=Airtel",
+      "raw_sms": "PAID.TID 796056217061. UGX 15,000 to MONTHLY MAINTENANCE FEE Charge UGX 500. Bal UGX 1,732,749. 09-April-2026 13:41",
+      "category": "fees_charges",
+      "direction": "out",
+      "amount": 15000.0,
+      "counterparty_name": "MONTHLY MAINTENANCE FEE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0034",
+      "transaction_text": "type=bill_payment | direction=out | amount=96500 UGX | counterparty=DSTV MULTICHOICE | network=Airtel",
+      "raw_sms": "PAID.TID 534932502545. UGX 96,500 to DSTV MULTICHOICE Charge UGX 1,000. Bal UGX 279,471. 14-March-2026 16:15",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 96500.0,
+      "counterparty_name": "DSTV MULTICHOICE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0088",
+      "transaction_text": "type=bill_payment | direction=out | amount=289000 UGX | counterparty=QUALITY SUPERMARKET | network=Airtel",
+      "raw_sms": "PAID.TID 912678183898. UGX 289,000 to QUALITY SUPERMARKET Charge UGX 500. Bal UGX 1,020,438. 30-April-2026 11:12",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 289000.0,
+      "counterparty_name": "QUALITY SUPERMARKET",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0120",
+      "transaction_text": "type=withdraw | direction=out | amount=382500 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 518903718101. UGX382,500 with Agent ID: 853629.Fee UGX 1,000.Tax UGX 500.Bal UGX 669,086. 06-March-2026 16:54.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 382500.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0077",
+      "transaction_text": "type=bill_payment | direction=out | amount=274000 UGX | counterparty=QUALITY SUPERMARKET | network=Airtel",
+      "raw_sms": "PAID.TID 563210400205. UGX 274,000 to QUALITY SUPERMARKET Charge UGX 500. Bal UGX 1,729,552. 11-April-2026 16:00",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 274000.0,
+      "counterparty_name": "QUALITY SUPERMARKET",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0003",
+      "transaction_text": "type=sent | direction=out | amount=162000 UGX | counterparty=OPIO DAVID | network=Airtel",
+      "raw_sms": "SENT.TID 213114812281. UGX 162,000 to OPIO DAVID 0717022674. Fee UGX 500. Bal UGX 199,502. Date 10-March-2026 12:48.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 162000.0,
+      "counterparty_name": "OPIO DAVID",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0104",
+      "transaction_text": "type=bill_payment | direction=out | amount=329000 UGX | counterparty=NORVIK HOSPITAL | network=Airtel",
+      "raw_sms": "PAID.TID 735056084331. UGX 329,000 to NORVIK HOSPITAL Charge UGX 0. Bal UGX 1,236,286. 17-March-2026 06:05",
+      "category": "healthcare",
+      "direction": "out",
+      "amount": 329000.0,
+      "counterparty_name": "NORVIK HOSPITAL",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0082",
+      "transaction_text": "type=bill_payment | direction=out | amount=147000 UGX | counterparty=CAPITAL SHOPPERS | network=Airtel",
+      "raw_sms": "PAID.TID 871359612234. UGX 147,000 to CAPITAL SHOPPERS Charge UGX 500. Bal UGX 1,850,718. 22-March-2026 14:56",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 147000.0,
+      "counterparty_name": "CAPITAL SHOPPERS",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0086",
+      "transaction_text": "type=bill_payment | direction=out | amount=257000 UGX | counterparty=CAPITAL SHOPPERS | network=Airtel",
+      "raw_sms": "PAID.TID 704499189734. UGX 257,000 to CAPITAL SHOPPERS Charge UGX 500. Bal UGX 698,719. 05-April-2026 22:22",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 257000.0,
+      "counterparty_name": "CAPITAL SHOPPERS",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0078",
+      "transaction_text": "type=bill_payment | direction=out | amount=236500 UGX | counterparty=QUALITY SUPERMARKET | network=Airtel",
+      "raw_sms": "PAID.TID 577398461838. UGX 236,500 to QUALITY SUPERMARKET Charge UGX 1,000. Bal UGX 374,385. 24-March-2026 20:45",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 236500.0,
+      "counterparty_name": "QUALITY SUPERMARKET",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0127",
+      "transaction_text": "type=withdraw | direction=out | amount=151500 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 517630618448. UGX151,500 with Agent ID: 702733.Fee UGX 500.Tax UGX 500.Bal UGX 1,204,408. 25-March-2026 21:06.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 151500.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0098",
+      "transaction_text": "type=bill_payment | direction=out | amount=151000 UGX | counterparty=GUVNOR UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 595675808653. UGX 151,000 to GUVNOR UGANDA Charge UGX 1,000. Bal UGX 1,450,716. 05-March-2026 11:00",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 151000.0,
+      "counterparty_name": "GUVNOR UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0113",
+      "transaction_text": "type=bill_payment | direction=out | amount=332000 UGX | counterparty=WEWOLE REPAYMENT | network=Airtel",
+      "raw_sms": "PAID.TID 646122147534. UGX 332,000 to WEWOLE REPAYMENT Charge UGX 1,000. Bal UGX 1,960,915. 01-March-2026 19:05",
+      "category": "loan_credit",
+      "direction": "out",
+      "amount": 332000.0,
+      "counterparty_name": "WEWOLE REPAYMENT",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0054",
+      "transaction_text": "type=bill_payment | direction=out | amount=81000 UGX | counterparty=Prepaid Mobile App | network=Airtel",
+      "raw_sms": "PAID.TID 318212526070. UGX 81,000 to Prepaid Mobile App Charge UGX 0. Bal UGX 314,023. 22-March-2026 08:52",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 81000.0,
+      "counterparty_name": "Prepaid Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0103",
+      "transaction_text": "type=bill_payment | direction=out | amount=159000 UGX | counterparty=MEDIPAL PHARMACY | network=Airtel",
+      "raw_sms": "PAID.TID 757475491416. UGX 159,000 to MEDIPAL PHARMACY Charge UGX 500. Bal UGX 88,594. 02-April-2026 21:28",
+      "category": "healthcare",
+      "direction": "out",
+      "amount": 159000.0,
+      "counterparty_name": "MEDIPAL PHARMACY",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0118",
+      "transaction_text": "type=withdraw | direction=out | amount=114500 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 584665753840. UGX114,500 with Agent ID: 579123.Fee UGX 1,000.Tax UGX 0.Bal UGX 214,110. 02-April-2026 16:55.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 114500.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0124",
+      "transaction_text": "type=withdraw | direction=out | amount=362000 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 364927045739. UGX362,000 with Agent ID: 250069.Fee UGX 1,000.Tax UGX 0.Bal UGX 1,048,683. 25-April-2026 18:39.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 362000.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0035",
+      "transaction_text": "type=bill_payment | direction=out | amount=147000 UGX | counterparty=DSTV MULTICHOICE | network=Airtel",
+      "raw_sms": "PAID.TID 784868121383. UGX 147,000 to DSTV MULTICHOICE Charge UGX 0. Bal UGX 1,185,683. 21-March-2026 08:00",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 147000.0,
+      "counterparty_name": "DSTV MULTICHOICE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0097",
+      "transaction_text": "type=bill_payment | direction=out | amount=63000 UGX | counterparty=CAFE JAVAS KAMPALA | network=Airtel",
+      "raw_sms": "PAID.TID 188735863186. UGX 63,000 to CAFE JAVAS KAMPALA Charge UGX 0. Bal UGX 334,372. 10-April-2026 12:16",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 63000.0,
+      "counterparty_name": "CAFE JAVAS KAMPALA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0014",
+      "transaction_text": "type=sent | direction=out | amount=279500 UGX | counterparty=UNCLE PATRICK | network=Airtel",
+      "raw_sms": "SENT.TID 429103158382. UGX 279,500 to UNCLE PATRICK 0784337174. Fee UGX 1,000. Bal UGX 1,770,108. Date 28-April-2026 09:55.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 279500.0,
+      "counterparty_name": "UNCLE PATRICK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0047",
+      "transaction_text": "type=airtime | direction=out | amount=67000 UGX | counterparty=0741641849 | network=Airtel",
+      "raw_sms": "Top up of UGX 67,000 for 0741641849. Bal : UGX 379,483.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 67000.0,
+      "counterparty_name": "Prepaid Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0071",
+      "transaction_text": "type=bill_payment | direction=out | amount=10500 UGX | counterparty=SAFEBODA UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 125079296952. UGX 10,500 to SAFEBODA UGANDA Charge UGX 0. Bal UGX 1,308,035. 30-April-2026 13:12",
+      "category": "transport",
+      "direction": "out",
+      "amount": 10500.0,
+      "counterparty_name": "SAFEBODA UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0117",
+      "transaction_text": "type=received | direction=in | amount=72000 UGX | counterparty=WEWOLE REPAYMENT | network=Airtel",
+      "raw_sms": "Received money UGX 72,000 from WEWOLE REPAYMENT 0729310235. New Bal UGX 1,666,769. TID 830094678828. 21-March-2026 21:45",
+      "category": "loan_credit",
+      "direction": "in",
+      "amount": 72000.0,
+      "counterparty_name": "WEWOLE REPAYMENT",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0044",
+      "transaction_text": "type=airtime | direction=out | amount=24500 UGX | counterparty=0765163555 | network=Airtel",
+      "raw_sms": "Top up of UGX 24,500 for 0765163555. Bal : UGX 1,943,790.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 24500.0,
+      "counterparty_name": "Data bundle Mobile App",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0125",
+      "transaction_text": "type=withdraw | direction=out | amount=376500 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 111453993673. UGX376,500 with Agent ID: 401603.Fee UGX 500.Tax UGX 2,000.Bal UGX 1,890,147. 17-March-2026 20:16.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 376500.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0130",
+      "transaction_text": "type=deposit | direction=in | amount=701500 UGX | counterparty=Agent 455001 | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 701,500 from Agent 455001 Agent 455001. Bal UGX 1,614,502. TID 893519162349. 13-March-2026 14:43",
+      "category": "cash_deposit",
+      "direction": "in",
+      "amount": 701500.0,
+      "counterparty_name": "Agent 455001",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0028",
+      "transaction_text": "type=bill_payment | direction=out | amount=97500 UGX | counterparty=STARLINK UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 866320981994. UGX 97,500 to STARLINK UGANDA Charge UGX 1,000. Bal UGX 1,536,980. 29-April-2026 20:18",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 97500.0,
+      "counterparty_name": "STARLINK UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0061",
+      "transaction_text": "type=bill_payment | direction=out | amount=84500 UGX | counterparty=BOLT KAMPALA | network=Airtel",
+      "raw_sms": "PAID.TID 354050883222. UGX 84,500 to BOLT KAMPALA Charge UGX 1,000. Bal UGX 808,283. 27-April-2026 08:08",
+      "category": "transport",
+      "direction": "out",
+      "amount": 84500.0,
+      "counterparty_name": "BOLT KAMPALA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0134",
+      "transaction_text": "type=deposit | direction=in | amount=563500 UGX | counterparty=Agent 992001 | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 563,500 from Agent 992001 Agent 992001. Bal UGX 1,921,899. TID 379879587162. 28-April-2026 14:53",
+      "category": "cash_deposit",
+      "direction": "in",
+      "amount": 563500.0,
+      "counterparty_name": "Agent 992001",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0019",
+      "transaction_text": "type=received | direction=in | amount=393500 UGX | counterparty=AUNTIE GRACE | network=Airtel",
+      "raw_sms": "Received money UGX 393,500 from AUNTIE GRACE 0734769795. New Bal UGX 951,835. TID 670799496139. 11-April-2026 17:28",
+      "category": "family_received",
+      "direction": "in",
+      "amount": 393500.0,
+      "counterparty_name": "AUNTIE GRACE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0027",
+      "transaction_text": "type=bill_payment | direction=out | amount=837500 UGX | counterparty=KAMPALA REALTY | network=Airtel",
+      "raw_sms": "PAID.TID 280640463568. UGX 837,500 to KAMPALA REALTY Charge UGX 0. Bal UGX 799,764. 25-April-2026 18:57",
+      "category": "rent_housing",
+      "direction": "out",
+      "amount": 837500.0,
+      "counterparty_name": "KAMPALA REALTY",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0064",
+      "transaction_text": "type=bill_payment | direction=out | amount=150000 UGX | counterparty=SAFEBODA UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 490596101232. UGX 150,000 to SAFEBODA UGANDA Charge UGX 500. Bal UGX 631,236. 25-March-2026 21:00",
+      "category": "transport",
+      "direction": "out",
+      "amount": 150000.0,
+      "counterparty_name": "SAFEBODA UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0128",
+      "transaction_text": "type=withdraw | direction=out | amount=61000 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 718510071124. UGX61,000 with Agent ID: 916118.Fee UGX 1,000.Tax UGX 2,000.Bal UGX 1,819,177. 23-April-2026 18:17.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 61000.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0129",
+      "transaction_text": "type=withdraw | direction=out | amount=360000 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 951632719131. UGX360,000 with Agent ID: 736553.Fee UGX 0.Tax UGX 500.Bal UGX 1,680,331. 17-April-2026 21:53.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 360000.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0045",
+      "transaction_text": "type=bundle | direction=out | amount=22000 UGX | counterparty=Bundles Mobile APP | network=Airtel",
+      "raw_sms": "PAID.TID 484229076692. UGX 22,000 to Bundles Mobile APP Charge UGX 0. Bal UGX 645,031. 20-April-2026 09:24",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 22000.0,
+      "counterparty_name": "Bundles Mobile APP",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0079",
+      "transaction_text": "type=bill_payment | direction=out | amount=153000 UGX | counterparty=KALUNGA MARKET | network=Airtel",
+      "raw_sms": "PAID.TID 751679795363. UGX 153,000 to KALUNGA MARKET Charge UGX 500. Bal UGX 567,866. 09-April-2026 21:29",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 153000.0,
+      "counterparty_name": "KALUNGA MARKET",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0073",
+      "transaction_text": "type=bill_payment | direction=out | amount=97000 UGX | counterparty=BOLT KAMPALA | network=Airtel",
+      "raw_sms": "PAID.TID 279612530880. UGX 97,000 to BOLT KAMPALA Charge UGX 0. Bal UGX 657,295. 11-March-2026 09:49",
+      "category": "transport",
+      "direction": "out",
+      "amount": 97000.0,
+      "counterparty_name": "BOLT KAMPALA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0013",
+      "transaction_text": "type=sent | direction=out | amount=77000 UGX | counterparty=OPIO DAVID | network=Airtel",
+      "raw_sms": "SENT.TID 101948728483. UGX 77,000 to OPIO DAVID 0749398441. Fee UGX 1,000. Bal UGX 1,519,336. Date 19-March-2026 19:10.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 77000.0,
+      "counterparty_name": "OPIO DAVID",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0108",
+      "transaction_text": "type=bill_payment | direction=out | amount=225000 UGX | counterparty=SACCO DEPOSIT NAKAWA | network=Airtel",
+      "raw_sms": "PAID.TID 443975597605. UGX 225,000 to SACCO DEPOSIT NAKAWA Charge UGX 500. Bal UGX 534,318. 22-April-2026 07:29",
+      "category": "savings_investments",
+      "direction": "out",
+      "amount": 225000.0,
+      "counterparty_name": "SACCO DEPOSIT NAKAWA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0090",
+      "transaction_text": "type=bill_payment | direction=out | amount=106500 UGX | counterparty=CAPITAL SHOPPERS | network=Airtel",
+      "raw_sms": "PAID.TID 239733046225. UGX 106,500 to CAPITAL SHOPPERS Charge UGX 0. Bal UGX 580,272. 20-March-2026 06:45",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 106500.0,
+      "counterparty_name": "CAPITAL SHOPPERS",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0105",
+      "transaction_text": "type=bill_payment | direction=out | amount=1230000 UGX | counterparty=COURSERA UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 815193503850. UGX 1,230,000 to COURSERA UGANDA Charge UGX 500. Bal UGX 932,422. 03-March-2026 11:30",
+      "category": "education",
+      "direction": "out",
+      "amount": 1230000.0,
+      "counterparty_name": "COURSERA UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0031",
+      "transaction_text": "type=bill_payment | direction=out | amount=70000 UGX | counterparty=ROKE TELKOM | network=Airtel",
+      "raw_sms": "PAID.TID 305519951312. UGX 70,000 to ROKE TELKOM Charge UGX 1,000. Bal UGX 148,699. 04-March-2026 22:05",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 70000.0,
+      "counterparty_name": "ROKE TELKOM",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0084",
+      "transaction_text": "type=bill_payment | direction=out | amount=138000 UGX | counterparty=KALUNGA MARKET | network=Airtel",
+      "raw_sms": "PAID.TID 639928251843. UGX 138,000 to KALUNGA MARKET Charge UGX 0. Bal UGX 944,890. 14-April-2026 21:41",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 138000.0,
+      "counterparty_name": "KALUNGA MARKET",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0015",
+      "transaction_text": "type=sent | direction=out | amount=211000 UGX | counterparty=UNCLE PATRICK | network=Airtel",
+      "raw_sms": "SENT.TID 958793742143. UGX 211,000 to UNCLE PATRICK 0706438436. Fee UGX 1,000. Bal UGX 1,939,484. Date 18-April-2026 11:34.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 211000.0,
+      "counterparty_name": "UNCLE PATRICK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0033",
+      "transaction_text": "type=bill_payment | direction=out | amount=40000 UGX | counterparty=ROKE TELKOM | network=Airtel",
+      "raw_sms": "PAID.TID 742773523346. UGX 40,000 to ROKE TELKOM Charge UGX 1,000. Bal UGX 1,190,366. 09-April-2026 08:26",
+      "category": "utilities",
+      "direction": "out",
+      "amount": 40000.0,
+      "counterparty_name": "ROKE TELKOM",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0146",
+      "transaction_text": "type=deposit | direction=in | amount=2008500 UGX | counterparty=STANBIC BANK | network=Airtel",
+      "raw_sms": "CASH DEPOSIT of UGX 2,008,500 from STANBIC BANK STANBIC BANK. Bal UGX 530,659. TID 693263798805. 22-March-2026 10:50",
+      "category": "self_transfer",
+      "direction": "in",
+      "amount": 2008500.0,
+      "counterparty_name": "STANBIC BANK",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0151",
+      "transaction_text": "type=bill_payment | direction=out | amount=9000 UGX | counterparty=UNKNOWN MERCHANT | network=Airtel",
+      "raw_sms": "PAID.TID 742669170937. UGX 9,000 to UNKNOWN MERCHANT Charge UGX 1,000. Bal UGX 1,154,986. 09-March-2026 14:39",
+      "category": "other",
+      "direction": "out",
+      "amount": 9000.0,
+      "counterparty_name": "UNKNOWN MERCHANT",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0110",
+      "transaction_text": "type=bill_payment | direction=out | amount=231500 UGX | counterparty=WEWOLE SAVINGS | network=Airtel",
+      "raw_sms": "PAID.TID 784453630589. UGX 231,500 to WEWOLE SAVINGS Charge UGX 500. Bal UGX 1,591,376. 04-March-2026 12:33",
+      "category": "savings_investments",
+      "direction": "out",
+      "amount": 231500.0,
+      "counterparty_name": "WEWOLE SAVINGS",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0142",
+      "transaction_text": "type=bill_payment | direction=out | amount=9500 UGX | counterparty=MONTHLY MAINTENANCE FEE | network=Airtel",
+      "raw_sms": "PAID.TID 819041453913. UGX 9,500 to MONTHLY MAINTENANCE FEE Charge UGX 500. Bal UGX 212,663. 17-April-2026 10:56",
+      "category": "fees_charges",
+      "direction": "out",
+      "amount": 9500.0,
+      "counterparty_name": "MONTHLY MAINTENANCE FEE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0021",
+      "transaction_text": "type=received | direction=in | amount=66000 UGX | counterparty=DAD OPIO | network=Airtel",
+      "raw_sms": "Received money UGX 66,000 from DAD OPIO 0774594297. New Bal UGX 589,009. TID 359906321488. 25-April-2026 16:04",
+      "category": "family_received",
+      "direction": "in",
+      "amount": 66000.0,
+      "counterparty_name": "DAD OPIO",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0023",
+      "transaction_text": "type=received | direction=in | amount=387000 UGX | counterparty=DAD OPIO | network=Airtel",
+      "raw_sms": "Received money UGX 387,000 from DAD OPIO 0702651177. New Bal UGX 1,816,596. TID 612866779068. 28-March-2026 17:27",
+      "category": "family_received",
+      "direction": "in",
+      "amount": 387000.0,
+      "counterparty_name": "DAD OPIO",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0017",
+      "transaction_text": "type=sent | direction=out | amount=268500 UGX | counterparty=MAMA SARAH | network=Airtel",
+      "raw_sms": "SENT.TID 944101545574. UGX 268,500 to MAMA SARAH 0773770370. Fee UGX 0. Bal UGX 268,738. Date 22-April-2026 08:48.",
+      "category": "family_sent",
+      "direction": "out",
+      "amount": 268500.0,
+      "counterparty_name": "MAMA SARAH",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0121",
+      "transaction_text": "type=withdraw | direction=out | amount=366000 UGX | network=Airtel",
+      "raw_sms": "WITHDRAWN. TID 921315799665. UGX366,000 with Agent ID: 203225.Fee UGX 500.Tax UGX 2,000.Bal UGX 194,539. 05-March-2026 13:40.",
+      "category": "cash_withdrawal",
+      "direction": "out",
+      "amount": 366000.0,
+      "counterparty_name": null,
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0039",
+      "transaction_text": "type=airtime | direction=out | amount=79000 UGX | counterparty=0741852264 | network=Airtel",
+      "raw_sms": "Top up of UGX 79,000 for 0741852264. Bal : UGX 1,793,687.",
+      "category": "airtime_bundles",
+      "direction": "out",
+      "amount": 79000.0,
+      "counterparty_name": "Bundles Mobile APP",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0095",
+      "transaction_text": "type=bill_payment | direction=out | amount=165000 UGX | counterparty=NETFLIX UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 518856259659. UGX 165,000 to NETFLIX UGANDA Charge UGX 500. Bal UGX 949,797. 08-April-2026 13:49",
+      "category": "dining_entertainment",
+      "direction": "out",
+      "amount": 165000.0,
+      "counterparty_name": "NETFLIX UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0065",
+      "transaction_text": "type=bill_payment | direction=out | amount=140500 UGX | counterparty=SHELL KAMPALA RD | network=Airtel",
+      "raw_sms": "PAID.TID 397295152191. UGX 140,500 to SHELL KAMPALA RD Charge UGX 500. Bal UGX 919,014. 17-April-2026 13:31",
+      "category": "transport",
+      "direction": "out",
+      "amount": 140500.0,
+      "counterparty_name": "SHELL KAMPALA RD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0150",
+      "transaction_text": "type=bill_payment | direction=out | amount=63500 UGX | counterparty=UNKNOWN MERCHANT | network=Airtel",
+      "raw_sms": "PAID.TID 189761667273. UGX 63,500 to UNKNOWN MERCHANT Charge UGX 1,000. Bal UGX 680,517. 15-April-2026 20:04",
+      "category": "other",
+      "direction": "out",
+      "amount": 63500.0,
+      "counterparty_name": "UNKNOWN MERCHANT",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0109",
+      "transaction_text": "type=bill_payment | direction=out | amount=415500 UGX | counterparty=MOKASH SAVE | network=Airtel",
+      "raw_sms": "PAID.TID 104243939720. UGX 415,500 to MOKASH SAVE Charge UGX 1,000. Bal UGX 1,384,213. 26-March-2026 22:52",
+      "category": "savings_investments",
+      "direction": "out",
+      "amount": 415500.0,
+      "counterparty_name": "MOKASH SAVE",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0080",
+      "transaction_text": "type=bill_payment | direction=out | amount=59000 UGX | counterparty=CARREFOUR UGANDA | network=Airtel",
+      "raw_sms": "PAID.TID 610029412031. UGX 59,000 to CARREFOUR UGANDA Charge UGX 1,000. Bal UGX 1,200,061. 18-March-2026 20:15",
+      "category": "groceries_food",
+      "direction": "out",
+      "amount": 59000.0,
+      "counterparty_name": "CARREFOUR UGANDA",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0024",
+      "transaction_text": "type=bill_payment | direction=out | amount=1224500 UGX | counterparty=MUKASA PROPERTIES LTD | network=Airtel",
+      "raw_sms": "PAID.TID 219664972382. UGX 1,224,500 to MUKASA PROPERTIES LTD Charge UGX 0. Bal UGX 526,470. 16-April-2026 16:51",
+      "category": "rent_housing",
+      "direction": "out",
+      "amount": 1224500.0,
+      "counterparty_name": "MUKASA PROPERTIES LTD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0106",
+      "transaction_text": "type=bill_payment | direction=out | amount=1248500 UGX | counterparty=CYBER SHOME LTD | network=Airtel",
+      "raw_sms": "PAID.TID 484270768628. UGX 1,248,500 to CYBER SHOME LTD Charge UGX 500. Bal UGX 861,368. 28-March-2026 21:05",
+      "category": "education",
+      "direction": "out",
+      "amount": 1248500.0,
+      "counterparty_name": "CYBER SHOME LTD",
+      "generation_seed": 42
+    },
+    {
+      "id": "ex_0102",
+      "transaction_text": "type=bill_payment | direction=out | amount=324500 UGX | counterparty=NORVIK HOSPITAL | network=Airtel",
+      "raw_sms": "PAID.TID 611635203107. UGX 324,500 to NORVIK HOSPITAL Charge UGX 500. Bal UGX 1,449,262. 17-April-2026 15:28",
+      "category": "healthcare",
+      "direction": "out",
+      "amount": 324500.0,
+      "counterparty_name": "NORVIK HOSPITAL",
+      "generation_seed": 42
+    }
+  ]
+}

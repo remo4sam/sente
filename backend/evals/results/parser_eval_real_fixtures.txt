@@ -1,0 +1,19 @@
+=== Parser eval: real_fixtures ===
+Total messages:  24
+Regex hits:      22  (100.0%)
+LLM fallbacks:   0  (0.0%)
+Skipped (OTP/FAILED): 2
+Failures:        0  (0.0%)
+
+Latency: regex 0.02ms avg, LLM 0.00ms avg
+
+Per-template hits:
+  airtel_paid                    7
+  airtel_sent                    6
+  airtel_cash_deposit            3
+  airtel_debited                 3
+  airtel_withdrawn               1
+  airtel_topup_out               1
+  airtel_airtime_in              1
+  airtel_withdraw_otp            1
+  airtel_failed                  1

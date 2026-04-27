@@ -1,8 +1,6 @@
 import { Dashboard } from "@/components/dashboard";
-import { AppLayout } from "@/components/layouts/app-layout";
-import type { NextPageWithLayout } from "@/lib/page-types";
 
-const DashboardPage: NextPageWithLayout = () => {
+export default function HomePage() {
   return (
     <div className="space-y-6">
       <div>
@@ -14,8 +12,4 @@ const DashboardPage: NextPageWithLayout = () => {
       <Dashboard />
     </div>
   );
-};
-
-DashboardPage.getLayout = (page) => <AppLayout>{page}</AppLayout>;
-
-export default DashboardPage;
+}

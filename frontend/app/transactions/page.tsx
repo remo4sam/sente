@@ -1,8 +1,6 @@
 import { TransactionTable } from "@/components/transaction-table";
-import { AppLayout } from "@/components/layouts/app-layout";
-import type { NextPageWithLayout } from "@/lib/page-types";
 
-const TransactionsPage: NextPageWithLayout = () => {
+export default function TransactionsPage() {
   return (
     <div className="space-y-6">
       <div>
@@ -15,8 +13,4 @@ const TransactionsPage: NextPageWithLayout = () => {
       <TransactionTable />
     </div>
   );
-};
-
-TransactionsPage.getLayout = (page) => <AppLayout>{page}</AppLayout>;
-
-export default TransactionsPage;
+}

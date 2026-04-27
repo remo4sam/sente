@@ -21,7 +21,8 @@ from typing import Optional
 from anthropic import Anthropic
 
 from app.config import get_settings
-from app.observability import anthropic_client, traceable
+from app.observability import get_logger, track_llm_call
+from app.retry import with_retries
 from app.schemas.transaction import (
     Direction,
     Network,
@@ -30,7 +31,7 @@ from app.schemas.transaction import (
     TransactionType,
 )
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 _SYSTEM = """You are a mobile money transaction parser for Uganda (MTN and Airtel).
@@ -59,21 +60,27 @@ system notice), return {"type": "other", "direction": "out", "amount": 0, "times
 """
 
 
-@traceable(name="llm_parse", tags=["parser", "fallback"], run_type="chain")
 def llm_parse(message: str, client: Optional[Anthropic] = None) -> Optional[ParsedTransaction]:
     """Parse a message via Claude. Returns None on hard failure."""
     settings = get_settings()
-    client = client or anthropic_client(settings.anthropic_api_key)
+    client = client or Anthropic(api_key=settings.anthropic_api_key)
 
     try:
-        resp = client.messages.create(
-            model=settings.parser_model,
-            max_tokens=512,
-            system=_SYSTEM,
-            messages=[{"role": "user", "content": message}],
-        )
+        with track_llm_call("parser", settings.parser_model) as t:
+            resp = with_retries(
+                lambda: client.messages.create(
+                    model=settings.parser_model,
+                    max_tokens=512,
+                    system=_SYSTEM,
+                    messages=[{"role": "user", "content": message}],
+                ),
+                op="parser",
+            )
+            t.input_tokens = getattr(resp.usage, "input_tokens", 0)
+            t.output_tokens = getattr(resp.usage, "output_tokens", 0)
+            t.success = True
     except Exception:
-        logger.exception("LLM parse API call failed")
+        logger.exception("llm_parse_failed", extra={"message_preview": message[:80]})
         return None
 
     text = "".join(b.text for b in resp.content if getattr(b, "type", None) == "text").strip()

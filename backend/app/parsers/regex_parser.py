@@ -330,6 +330,37 @@ def _build_airtel_failed(m: re.Match, raw: str) -> Optional[ParsedTransaction]:
     return None
 
 
+# ---------- Airtel: "Received money UGX ... from NAME NUMBER" ----------
+# Variant of RECEIVED that shows up in some message formats (and in the
+# synthetic corpus). Keep this below RECEIVED variants with more structure.
+
+_AIRTEL_RECEIVED_MONEY = re.compile(
+    r"""Received\s+money\s+UGX\s+(?P<amount>[\d,]+)\s+from\s+
+        (?P<n>.+?)\s+(?P<number>\d{9,12})\.\s*
+        (?:New\s+Bal|Bal)\s+UGX\s+(?P<balance>[\d,]+)\.\s*
+        TID\s+(?P<tid>\w+)\.\s*
+        (?P<ts>\d{1,2}-[A-Za-z]+-\d{4}\s+\d{1,2}:\d{2}(?::\d{2})?)
+    """,
+    re.VERBOSE | re.IGNORECASE,
+)
+
+
+def _build_airtel_received_money(m: re.Match, raw: str) -> ParsedTransaction:
+    return ParsedTransaction(
+        transaction_id=m.group("tid"),
+        timestamp=_ts(m.group("ts")) or datetime.utcnow(),
+        type=TransactionType.RECEIVED,
+        direction=Direction.IN,
+        amount=_amt(m.group("amount")),
+        counterparty_name=_clean_name(m.group("n")),
+        counterparty_number=m.group("number"),
+        balance_after=_amt(m.group("balance")),
+        network=Network.AIRTEL,
+        raw_message=raw,
+        parse_method=ParseMethod.REGEX,
+    )
+
+
 # ---------- Template registry ----------
 # Order matters: more specific patterns first. DEBITED must come before anything
 # that could weakly match 'You have been'.
@@ -344,6 +375,7 @@ TEMPLATES: list[Template] = [
     Template("airtel_debited", Network.AIRTEL, _AIRTEL_DEBITED, _build_airtel_debited),
     Template("airtel_topup_out", Network.AIRTEL, _AIRTEL_TOPUP_OUT, _build_airtel_topup_out),
     Template("airtel_airtime_in", Network.AIRTEL, _AIRTEL_AIRTIME_IN, _build_airtel_airtime_in),
+    Template("airtel_received_money", Network.AIRTEL, _AIRTEL_RECEIVED_MONEY, _build_airtel_received_money),
     # TODO: add MTN equivalents once we have MTN samples
 ]
 

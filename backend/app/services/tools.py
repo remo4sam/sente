@@ -14,8 +14,20 @@ from typing import Any
 from sqlalchemy import and_, func, desc
 from sqlalchemy.orm import Session
 
+from app.config import get_settings
 from app.models.db import Transaction
-from app.observability import traceable
+
+
+def _month_expr():
+    """Cross-dialect 'YYYY-MM' string from a DateTime column.
+
+    SQLite: strftime('%Y-%m', timestamp)
+    Postgres: to_char(timestamp, 'YYYY-MM')
+    Detected at call time from the configured DATABASE_URL.
+    """
+    if get_settings().database_url.startswith("sqlite"):
+        return func.strftime("%Y-%m", Transaction.timestamp)
+    return func.to_char(Transaction.timestamp, "YYYY-MM")
 
 
 def _date_range(period: str | None) -> tuple[datetime | None, datetime | None]:
@@ -47,7 +59,6 @@ def _date_range(period: str | None) -> tuple[datetime | None, datetime | None]:
     return None, None
 
 
-@traceable(name="tool.query_transactions", tags=["tool"], run_type="tool")
 def tool_query_transactions(
     db: Session,
     category: str | None = None,
@@ -89,7 +100,6 @@ def tool_query_transactions(
     }
 
 
-@traceable(name="tool.aggregate", tags=["tool"], run_type="tool")
 def tool_aggregate(
     db: Session,
     group_by: str,  # "category" | "counterparty" | "month"
@@ -103,7 +113,7 @@ def tool_aggregate(
     elif group_by == "counterparty":
         col = Transaction.counterparty_name
     elif group_by == "month":
-        col = func.strftime("%Y-%m", Transaction.timestamp)
+        col = _month_expr()
     else:
         return {"error": f"unknown group_by: {group_by}"}
 
@@ -134,7 +144,6 @@ def tool_aggregate(
     }
 
 
-@traceable(name="tool.top_counterparties", tags=["tool"], run_type="tool")
 def tool_top_counterparties(
     db: Session, direction: str = "out", period: str | None = None, limit: int = 10
 ) -> dict[str, Any]:
@@ -148,14 +157,13 @@ def tool_top_counterparties(
     )
 
 
-@traceable(name="tool.category_trend", tags=["tool"], run_type="tool")
 def tool_category_trend(
     db: Session, category: str, months: int = 6
 ) -> dict[str, Any]:
     cutoff = datetime.utcnow().replace(day=1, hour=0, minute=0, second=0, microsecond=0) - timedelta(days=months * 31)
     rows = (
         db.query(
-            func.strftime("%Y-%m", Transaction.timestamp).label("month"),
+            _month_expr().label("month"),
             func.sum(Transaction.amount).label("total"),
         )
         .filter(Transaction.category == category)

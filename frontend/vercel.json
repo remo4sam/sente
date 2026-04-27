@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+
+  "_comment_rewrites": "Optional: route /api/* through Vercel to the backend so the frontend can use same-origin requests. If you'd rather hit the backend directly, delete the rewrites block and set NEXT_PUBLIC_API_BASE in Vercel env vars to the backend URL.",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://YOUR-BACKEND-URL.up.railway.app/:path*"
+    }
+  ]
+}

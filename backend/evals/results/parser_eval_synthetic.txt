@@ -1,0 +1,16 @@
+=== Parser eval: synthetic ===
+Total messages:  154
+Regex hits:      154  (100.0%)
+LLM fallbacks:   0  (0.0%)
+Skipped (OTP/FAILED): 0
+Failures:        0  (0.0%)
+
+Latency: regex 0.01ms avg, LLM 0.00ms avg
+
+Per-template hits:
+  airtel_paid                    89
+  airtel_sent                    18
+  airtel_topup_out               14
+  airtel_cash_deposit            13
+  airtel_withdrawn               12
+  airtel_received_money          8

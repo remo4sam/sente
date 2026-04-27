@@ -10,7 +10,8 @@ and Airtel). It's a capstone project for an AI engineering course, built to
 demonstrate a handful of specific AI engineering techniques on top of a real
 personal-finance use case.
 
-The project uses his real Airtel Money data as the design
+The user is **Samuel**, a software engineer transitioning to AI engineering,
+based in Kampala. The project uses his real Airtel Money data as the design
 reference, with synthetic data planned for public demos.
 
 ## The four AI engineering showcases
@@ -200,5 +201,5 @@ When extending the project, likely next moves in rough order:
 3. MTN SMS templates + fixtures (once real samples are available)
 4. Eval harness: frozen labeled set, before/after categorization accuracy,
    parser fallback rate report
-5. Deployment: TBD for frontend (not Vercel), Railway/Render for backend, env
-   vars for API key and Clerk keys
+5. Deployment: Vercel for frontend, Railway/Render for backend, env vars for
+   API key

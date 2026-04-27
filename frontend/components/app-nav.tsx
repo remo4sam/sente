@@ -1,20 +1,21 @@
+"use client";
+
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { UserButton } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 import { BarChart3, MessageSquare, Receipt, Upload } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV = [
-  { href: "/dashboard", label: "Dashboard", icon: BarChart3 },
+  { href: "/", label: "Dashboard", icon: BarChart3 },
   { href: "/upload", label: "Upload", icon: Upload },
   { href: "/transactions", label: "Transactions", icon: Receipt },
   { href: "/chat", label: "Chat", icon: MessageSquare },
 ];
 
 export function AppNav() {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
   return (
-    <aside className="flex w-60 shrink-0 flex-col border-r bg-muted/30 px-4 py-6">
+    <aside className="w-60 shrink-0 border-r bg-muted/30 px-4 py-6">
       <div className="mb-8 px-2">
         <Link href="/" className="flex items-baseline gap-2">
           <span className="text-2xl font-bold tracking-tight">Sente</span>
@@ -23,7 +24,7 @@ export function AppNav() {
       </div>
       <nav className="flex flex-col gap-1">
         {NAV.map(({ href, label, icon: Icon }) => {
-          const active = pathname === href || pathname.startsWith(href + "/");
+          const active = pathname === href || (href !== "/" && pathname.startsWith(href));
           return (
             <Link
               key={href}
@@ -41,10 +42,6 @@ export function AppNav() {
           );
         })}
       </nav>
-      <div className="mt-auto flex items-center gap-3 border-t px-2 pt-4">
-        <UserButton />
-        <span className="text-xs text-muted-foreground">Account</span>
-      </div>
     </aside>
   );
 }

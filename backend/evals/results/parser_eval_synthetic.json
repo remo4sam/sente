@@ -1,0 +1,22 @@
+{
+  "corpus_name": "synthetic",
+  "total": 154,
+  "regex_hits": 154,
+  "llm_hits": 0,
+  "skipped": 0,
+  "failures": 0,
+  "regex_rate": 1.0,
+  "llm_rate": 0.0,
+  "failure_rate": 0.0,
+  "template_hits": {
+    "airtel_topup_out": 14,
+    "airtel_sent": 18,
+    "airtel_paid": 89,
+    "airtel_withdrawn": 12,
+    "airtel_cash_deposit": 13,
+    "airtel_received_money": 8
+  },
+  "avg_regex_latency_ms": 0.01,
+  "avg_llm_latency_ms": 0.0,
+  "unmatched_samples": []
+}

@@ -13,7 +13,6 @@ eval set — is the core evaluation chart in the capstone report.
 from __future__ import annotations
 
 import json
-import logging
 from dataclasses import dataclass
 from typing import Iterable
 
@@ -24,11 +23,12 @@ from sqlalchemy.orm import Session
 from app.config import get_settings
 from app.data.taxonomy import Category, CATEGORY_DESCRIPTIONS
 from app.models.db import CategoryExample
-from app.observability import anthropic_client, traceable
+from app.observability import get_logger, track_llm_call
+from app.retry import with_retries
 from app.schemas.transaction import ParsedTransaction
 from app.services.embeddings import embed_one, embed, cosine_similarity
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 def transaction_to_text(t: ParsedTransaction) -> str:
@@ -53,7 +53,6 @@ class FewShot:
     category: str
 
 
-@traceable(name="retrieve_few_shots", tags=["categorizer", "rag"], run_type="retriever")
 def retrieve_few_shots(
     db: Session, query_text: str, k: int = 5, min_similarity: float = 0.55
 ) -> list[FewShot]:
@@ -94,23 +93,29 @@ def _build_user_prompt(transaction_text: str, few_shots: list[FewShot]) -> str:
     return "\n".join(parts)
 
 
-@traceable(name="classify", tags=["categorizer"], run_type="chain")
 def classify(
     db: Session, transaction: ParsedTransaction, client: Anthropic | None = None
 ) -> tuple[Category, float]:
     """Zero-shot → few-shot categorization. Returns (category, confidence)."""
     settings = get_settings()
-    client = client or anthropic_client(settings.anthropic_api_key)
+    client = client or Anthropic(api_key=settings.anthropic_api_key)
 
     text = transaction_to_text(transaction)
     few_shots = retrieve_few_shots(db, text)
 
-    resp = client.messages.create(
-        model=settings.categorizer_model,
-        max_tokens=256,
-        system=_CLASSIFIER_SYSTEM,
-        messages=[{"role": "user", "content": _build_user_prompt(text, few_shots)}],
-    )
+    with track_llm_call("categorizer", settings.categorizer_model) as t:
+        resp = with_retries(
+            lambda: client.messages.create(
+                model=settings.categorizer_model,
+                max_tokens=256,
+                system=_CLASSIFIER_SYSTEM,
+                messages=[{"role": "user", "content": _build_user_prompt(text, few_shots)}],
+            ),
+            op="categorizer",
+        )
+        t.input_tokens = getattr(resp.usage, "input_tokens", 0)
+        t.output_tokens = getattr(resp.usage, "output_tokens", 0)
+        t.success = True
     raw = "".join(b.text for b in resp.content if getattr(b, "type", None) == "text").strip()
     if raw.startswith("```"):
         raw = raw.strip("`")
@@ -122,7 +127,7 @@ def classify(
         category = Category(data["category"])
         confidence = float(data.get("confidence", 0.5))
     except Exception:
-        logger.warning("Classifier fallback to OTHER; raw=%r", raw[:120])
+        logger.warning("classifier_parse_fallback", extra={"raw_preview": raw[:120]})
         category, confidence = Category.OTHER, 0.0
 
     return category, confidence

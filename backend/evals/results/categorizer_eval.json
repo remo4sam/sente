@@ -1,0 +1,193 @@
+{
+  "num_train": 108,
+  "num_holdout": 46,
+  "zero_shot": {
+    "total": 46,
+    "correct": 41,
+    "accuracy": 0.8913043478260869,
+    "per_class_accuracy": {
+      "savings_investments": 0.5,
+      "airtime_bundles": 1.0,
+      "dining_entertainment": 1.0,
+      "family_sent": 1.0,
+      "cash_deposit": 1.0,
+      "fees_charges": 1.0,
+      "transport": 0.8,
+      "utilities": 0.6666666666666666,
+      "healthcare": 1.0,
+      "loan_credit": 1.0,
+      "self_transfer": 1.0,
+      "cash_withdrawal": 1.0,
+      "groceries_food": 1.0,
+      "family_received": 1.0,
+      "other": 0.0,
+      "rent_housing": 1.0,
+      "education": 0.0
+    },
+    "per_class_support": {
+      "savings_investments": 2,
+      "airtime_bundles": 6,
+      "dining_entertainment": 3,
+      "family_sent": 5,
+      "cash_deposit": 2,
+      "fees_charges": 2,
+      "transport": 5,
+      "utilities": 3,
+      "healthcare": 1,
+      "loan_credit": 2,
+      "self_transfer": 2,
+      "cash_withdrawal": 4,
+      "groceries_food": 4,
+      "family_received": 2,
+      "other": 1,
+      "rent_housing": 1,
+      "education": 1
+    }
+  },
+  "oracle": {
+    "total": 46,
+    "correct": 45,
+    "accuracy": 0.9782608695652174,
+    "per_class_accuracy": {
+      "savings_investments": 1.0,
+      "airtime_bundles": 1.0,
+      "dining_entertainment": 1.0,
+      "family_sent": 1.0,
+      "cash_deposit": 1.0,
+      "fees_charges": 1.0,
+      "transport": 1.0,
+      "utilities": 1.0,
+      "healthcare": 1.0,
+      "loan_credit": 1.0,
+      "self_transfer": 1.0,
+      "cash_withdrawal": 1.0,
+      "groceries_food": 1.0,
+      "family_received": 1.0,
+      "other": 1.0,
+      "rent_housing": 1.0,
+      "education": 0.0
+    },
+    "per_class_support": {
+      "savings_investments": 2,
+      "airtime_bundles": 6,
+      "dining_entertainment": 3,
+      "family_sent": 5,
+      "cash_deposit": 2,
+      "fees_charges": 2,
+      "transport": 5,
+      "utilities": 3,
+      "healthcare": 1,
+      "loan_credit": 2,
+      "self_transfer": 2,
+      "cash_withdrawal": 4,
+      "groceries_food": 4,
+      "family_received": 2,
+      "other": 1,
+      "rent_housing": 1,
+      "education": 1
+    }
+  },
+  "zero_shot_top_confusions": [
+    {
+      "true": "transport",
+      "pred": "utilities",
+      "count": 1
+    },
+    {
+      "true": "utilities",
+      "pred": "airtime_bundles",
+      "count": 1
+    },
+    {
+      "true": "other",
+      "pred": "fees_charges",
+      "count": 1
+    },
+    {
+      "true": "education",
+      "pred": "utilities",
+      "count": 1
+    }
+  ],
+  "oracle_top_confusions": [
+    {
+      "true": "education",
+      "pred": "utilities",
+      "count": 1
+    }
+  ],
+  "random_curve": [
+    {
+      "n_corrections": 0,
+      "mean_acc": 0.9130434782608695,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 20,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 40,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 60,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 80,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 100,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 108,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    }
+  ],
+  "stratified_curve": [
+    {
+      "n_corrections": 0,
+      "mean_acc": 0.8695652173913043,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 20,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 40,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 60,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 80,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 100,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    },
+    {
+      "n_corrections": 108,
+      "mean_acc": 0.9782608695652174,
+      "stdev": 0.0
+    }
+  ]
+}

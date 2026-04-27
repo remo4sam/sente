@@ -2,6 +2,7 @@
 
 Endpoints:
   GET  /health                Liveness probe
+  GET  /metrics               LLM call metrics snapshot
   GET  /categories            Taxonomy for the frontend
   POST /ingest/text           Ingest one or more SMS message strings (JSON)
   POST /ingest/pdf            Ingest an Airtel statement PDF (multipart)
@@ -12,11 +13,12 @@ Endpoints:
 from __future__ import annotations
 
 import tempfile
+import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
 
-from fastapi import Depends, FastAPI, File, HTTPException, UploadFile
+from fastapi import Depends, FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
@@ -25,6 +27,12 @@ from app.config import get_settings
 from app.data.taxonomy import Category, CATEGORY_DESCRIPTIONS
 from app.database import get_db, init_db
 from app.models.db import Transaction
+from app.observability import (
+    configure_logging,
+    get_logger,
+    get_metrics_recorder,
+    new_request_id,
+)
 from app.parsers.orchestrator import parse_batch
 from app.parsers.pdf_importer import parse_statement
 from app.schemas.transaction import ParsedTransaction
@@ -32,14 +40,18 @@ from app.services.categorizer import classify, record_correction
 from app.services.chat_agent import run_chat
 from app.services.ingest import upsert_transactions
 
+logger = get_logger("api")
+
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
+    configure_logging()
     init_db()
+    logger.info("startup_complete")
     yield
 
 
-app = FastAPI(title="Sente", version="0.2.0", lifespan=lifespan)
+app = FastAPI(title="Sente", version="0.3.0", lifespan=lifespan)
 settings = get_settings()
 app.add_middleware(
     CORSMiddleware,
@@ -48,6 +60,41 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.middleware("http")
+async def request_logging_middleware(request: Request, call_next):
+    """Tag every request with an ID and log latency + status."""
+    rid = new_request_id()
+    t0 = time.perf_counter()
+    request.state.request_id = rid
+    try:
+        response = await call_next(request)
+    except Exception:
+        latency_ms = (time.perf_counter() - t0) * 1000
+        logger.exception(
+            "request_error",
+            extra={
+                "request_id": rid,
+                "method": request.method,
+                "path": request.url.path,
+                "latency_ms": round(latency_ms, 1),
+            },
+        )
+        raise
+    latency_ms = (time.perf_counter() - t0) * 1000
+    response.headers["X-Request-ID"] = rid
+    logger.info(
+        "request",
+        extra={
+            "request_id": rid,
+            "method": request.method,
+            "path": request.url.path,
+            "status": response.status_code,
+            "latency_ms": round(latency_ms, 1),
+        },
+    )
+    return response
 
 
 # ---------- Request / response models ----------
@@ -167,6 +214,12 @@ def _categorize_and_persist(
 @app.get("/health")
 def health():
     return {"ok": True}
+
+
+@app.get("/metrics")
+def metrics():
+    """Snapshot of LLM call metrics. Useful for the demo and ongoing monitoring."""
+    return {"llm": get_metrics_recorder().snapshot()}
 
 
 @app.get("/categories")

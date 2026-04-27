@@ -10,17 +10,17 @@ the shape is stable — see docs/plan.md.
 from __future__ import annotations
 
 import json
-import logging
 from typing import Any
 
 from anthropic import Anthropic
 from sqlalchemy.orm import Session
 
 from app.config import get_settings
-from app.observability import anthropic_client, traceable
+from app.observability import get_logger, track_llm_call
+from app.retry import with_retries
 from app.services.tools import TOOL_REGISTRY
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 TOOL_SCHEMAS: list[dict[str, Any]] = [
@@ -107,23 +107,29 @@ Rules:
 """
 
 
-@traceable(name="run_chat", tags=["agent"], run_type="chain")
 def run_chat(db: Session, messages: list[dict[str, Any]], max_steps: int = 6) -> dict[str, Any]:
     """Run the agent loop. Returns {"answer": str, "trace": list}."""
     settings = get_settings()
-    client = anthropic_client(settings.anthropic_api_key)
+    client = Anthropic(api_key=settings.anthropic_api_key)
 
     trace: list[dict[str, Any]] = []
     convo = list(messages)
 
     for step in range(max_steps):
-        resp = client.messages.create(
-            model=settings.chat_model,
-            max_tokens=1024,
-            system=_SYSTEM,
-            tools=TOOL_SCHEMAS,
-            messages=convo,
-        )
+        with track_llm_call("chat", settings.chat_model) as t:
+            resp = with_retries(
+                lambda: client.messages.create(
+                    model=settings.chat_model,
+                    max_tokens=1024,
+                    system=_SYSTEM,
+                    tools=TOOL_SCHEMAS,
+                    messages=convo,
+                ),
+                op="chat",
+            )
+            t.input_tokens = getattr(resp.usage, "input_tokens", 0)
+            t.output_tokens = getattr(resp.usage, "output_tokens", 0)
+            t.success = True
 
         if resp.stop_reason == "tool_use":
             tool_results = []
