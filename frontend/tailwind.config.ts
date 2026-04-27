@@ -14,6 +14,11 @@ const config: Config = {
       screens: { "2xl": "1400px" },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-geist)", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ["var(--font-fraunces)", "ui-serif", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -44,11 +49,38 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        // Brand-direct aliases
+        paper: "hsl(var(--paper))",
+        "paper-deep": "hsl(var(--paper-deep))",
+        ink: "hsl(var(--ink))",
+        leaf: "hsl(var(--leaf))",
+        kingfisher: "hsl(var(--kingfisher))",
+        lime: "hsl(var(--lime))",
+        peach: "hsl(var(--peach))",
+        stone: "hsl(var(--stone))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(8px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "ink-in": {
+          from: { opacity: "0", clipPath: "inset(0 100% 0 0)" },
+          to: { opacity: "1", clipPath: "inset(0 0 0 0)" },
+        },
+      },
+      animation: {
+        "fade-up": "fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both",
+        "ink-in": "ink-in 0.9s cubic-bezier(0.65, 0, 0.35, 1) both",
       },
     },
   },

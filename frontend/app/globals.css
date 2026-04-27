@@ -4,44 +4,37 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
-    --ring: 215 20.2% 65.1%;
-    --radius: 0.5rem;
-  }
+    /* Brand palette (HSL) */
+    --paper: 38 51% 85%;        /* #ECDFC7 cream */
+    --paper-deep: 38 30% 78%;   /* warm muted cream */
+    --ink: 235 67% 8%;          /* #050725 near-black */
+    --leaf: 140 38% 19%;        /* #1F422C deep green */
+    --kingfisher: 3 65% 42%;    /* #B12B24 red */
+    --lime: 72 53% 57%;         /* #BBD151 */
+    --peach: 28 92% 71%;        /* #F9B672 */
+    --stone: 240 3% 53%;        /* #84848A */
 
-  .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --ring: 216 34% 17%;
+    /* shadcn semantic tokens, mapped to brand */
+    --background: var(--paper);
+    --foreground: var(--ink);
+    --card: 39 56% 90%;
+    --card-foreground: var(--ink);
+    --popover: 39 56% 90%;
+    --popover-foreground: var(--ink);
+    --primary: var(--leaf);
+    --primary-foreground: var(--paper);
+    --secondary: var(--peach);
+    --secondary-foreground: var(--ink);
+    --muted: var(--paper-deep);
+    --muted-foreground: var(--stone);
+    --accent: var(--lime);
+    --accent-foreground: var(--ink);
+    --destructive: var(--kingfisher);
+    --destructive-foreground: var(--paper);
+    --border: 38 22% 70%;
+    --input: 38 22% 70%;
+    --ring: var(--leaf);
+    --radius: 0.375rem;
   }
 }
 
@@ -49,8 +42,49 @@
   * {
     @apply border-border;
   }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: "ss01", "cv11", "calt";
+    background-image:
+      radial-gradient(hsl(var(--ink) / 0.04) 1px, transparent 1px),
+      radial-gradient(hsl(var(--ink) / 0.025) 1px, transparent 1px);
+    background-size: 4px 4px, 12px 12px;
+    background-position: 0 0, 2px 2px;
+  }
+  ::selection {
+    background: hsl(var(--leaf));
+    color: hsl(var(--paper));
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0, "opsz" 144;
+    letter-spacing: -0.02em;
+  }
+  .font-display-italic {
+    font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+    font-style: italic;
+    font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  }
+  .font-mono-num {
+    font-family: var(--font-mono), ui-monospace, "JetBrains Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum", "ss01";
+  }
+  .hairline {
+    border-top: 1px solid hsl(var(--ink) / 0.18);
+  }
+  .rule-thick {
+    border-top: 2px solid hsl(var(--ink));
+  }
+  .ink-shadow {
+    box-shadow: 0 1px 0 hsl(var(--ink) / 0.08), 0 8px 24px -12px hsl(var(--ink) / 0.18);
   }
 }
