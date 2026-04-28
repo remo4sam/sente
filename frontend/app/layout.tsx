@@ -32,12 +32,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider>
-      <html
-        lang="en"
-        className={`${fraunces.variable} ${geist.variable} ${jetbrains.variable}`}
-      >
-        <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${geist.variable} ${jetbrains.variable}`}
+    >
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+        <ClerkProvider>
           <div className="flex min-h-screen">
             <AppNav />
             <main className="flex-1 overflow-x-hidden">
@@ -46,8 +46,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </RouteGuard>
             </main>
           </div>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }

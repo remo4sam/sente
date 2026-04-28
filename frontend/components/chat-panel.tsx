@@ -6,6 +6,7 @@ import { api } from "@/lib/api";
 import type { ChatToolTrace, ChatTurn } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Markdown } from "@/components/markdown";
 
 interface Message extends ChatTurn {
   trace?: ChatToolTrace[];
@@ -113,7 +114,7 @@ function MessageBubble({ message }: { message: Message }) {
             isUser ? "bg-primary text-primary-foreground" : "bg-muted"
           }`}
         >
-          {message.content}
+          {isUser ? message.content : <Markdown>{message.content}</Markdown>}
         </div>
         {message.trace && message.trace.length > 0 && <ToolTrace trace={message.trace} />}
       </div>
