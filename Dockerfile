@@ -15,8 +15,6 @@ WORKDIR /build
 COPY backend/requirements.txt .
 RUN pip install --user --no-cache-dir -r requirements.txt
 
-# Pre-download the embedding model so it's cached in the image
-ENV TRANSFORMERS_CACHE=/build/.cache/huggingface
 ENV HF_HOME=/build/.cache/huggingface
 RUN python -c "from sentence_transformers import SentenceTransformer; \
     SentenceTransformer('BAAI/bge-small-en-v1.5')"
@@ -30,9 +28,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && useradd --create-home --shell /bin/bash app
 
-# Copy installed Python packages and HF model cache from builder
-COPY --from=builder /root/.local /home/app/.local
-COPY --from=builder /build/.cache/huggingface /home/app/.cache/huggingface
+# Python packages installed in the builder stage (`pip install --user` puts
+# them in /root/.local). Without this, uvicorn and friends won't exist.
+COPY --from=builder --chown=app:app /root/.local /home/app/.local
+
+# Only the bge model — nothing else from the HF cache.
+COPY --from=builder --chown=app:app \
+    /build/.cache/huggingface/hub/models--BAAI--bge-small-en-v1.5 \
+    /home/app/.cache/huggingface/hub/models--BAAI--bge-small-en-v1.5
 
 ENV PATH=/home/app/.local/bin:$PATH \
     PYTHONUNBUFFERED=1 \
@@ -50,5 +53,19 @@ USER app
 ENV PORT=8000
 EXPOSE 8000
 
-# Postgres backend — safe to scale workers based on host CPU
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --workers 2"]
+# Required runtime env (must be supplied at `docker run -e ...` or by the host):
+#   ANTHROPIC_API_KEY=sk-ant-...
+#   DATABASE_URL=postgresql+psycopg2://postgres.<ref>:<password>@aws-0-<region>.pooler.supabase.com:6543/postgres?sslmode=require
+#   CORS_ORIGINS=https://your-frontend.example
+#
+# We refuse to start with the default localhost URL, which would silently fail
+# inside the container. .dockerignore keeps backend/.env out of the image so
+# the host's env vars are the only source of truth.
+CMD ["sh", "-c", "\
+    : \"${DATABASE_URL:?DATABASE_URL must be set (e.g. Supabase pooler URL with ?sslmode=require)}\"; \
+    : \"${ANTHROPIC_API_KEY:?ANTHROPIC_API_KEY must be set}\"; \
+    case \"$DATABASE_URL\" in *localhost*|*127.0.0.1*) \
+        echo 'ERROR: DATABASE_URL points at localhost from inside the container.' >&2; exit 1;; \
+    esac; \
+    exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --workers 2 \
+"]

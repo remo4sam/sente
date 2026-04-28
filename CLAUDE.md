@@ -10,9 +10,6 @@ and Airtel). It's a capstone project for an AI engineering course, built to
 demonstrate a handful of specific AI engineering techniques on top of a real
 personal-finance use case.
 
-The user is **Samuel**, a software engineer transitioning to AI engineering,
-based in Kampala. The project uses his real Airtel Money data as the design
-reference, with synthetic data planned for public demos.
 
 ## The four AI engineering showcases
 
@@ -162,44 +159,3 @@ Working end-to-end:
 - Categorization with learning loop
 - Chat agent with 4 tools
 - Dashboard, transactions table, upload, chat UI
-
-Not yet built:
-- MTN SMS templates (need real MTN samples first)
-- MTN PDF support
-- SMS XML importer (SMS Backup & Restore format) — important because it
-  provides the missing timestamps for `topup` and `debited` templates
-- Synthetic data generator for public demos
-- Eval harness with frozen labeled set + before/after categorization accuracy
-- Budgets + forecasting (phase 2)
-- Business-user features (phase 2)
-
-## Things to NOT do
-
-- **Don't reproduce copyrighted content from external sources** in generated
-  code or docs.
-- **Don't use browser storage APIs** (localStorage, sessionStorage) in
-  frontend code — Claude.ai artifacts don't support them; for this standalone
-  Next.js app it's fine to use them, but flag clearly if you do.
-- **Don't pre-commit the user's real financial data** as a public fixture.
-  The PDF in `tests/fixtures/` is for local dev only — if the repo goes public,
-  replace it with synthetic data before pushing.
-- **Don't swap `pdfplumber` for `liteparse`** — we evaluated it and it's a
-  Node/TS tool, doesn't fit the Python stack, and pdfplumber gets 100% on real
-  statements anyway. See conversation history for the decision writeup.
-- **Don't categorize pass-through transfers as spending.** Use
-  `SELF_TRANSFER` and exclude from totals.
-- **Don't remove the fallback-rate metric.** It's a capstone evaluation
-  artifact.
-
-## For next sessions
-
-When extending the project, likely next moves in rough order:
-
-1. SMS XML importer for SMS Backup & Restore format (gets real timestamps
-   for the timestamp-less SMS templates)
-2. Synthetic data generator using Haiku and real templates as shots
-3. MTN SMS templates + fixtures (once real samples are available)
-4. Eval harness: frozen labeled set, before/after categorization accuracy,
-   parser fallback rate report
-5. Deployment: Vercel for frontend, Railway/Render for backend, env vars for
-   API key

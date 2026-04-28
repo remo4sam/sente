@@ -1,0 +1,32 @@
+# Never bake secrets or local config into the image
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Python build/runtime junk
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+backend/.venv
+backend/venv
+backend/sente.db
+backend/*.sqlite*
+
+# Frontend — not part of the backend image
+frontend
+node_modules
+
+# VCS, IDE, OS
+.git
+.gitignore
+.github
+.vscode
+.idea
+.DS_Store
+
+# Local data / fixtures we don't want in production images
+backend/data/local
+backend/tests/fixtures/*.pdf
